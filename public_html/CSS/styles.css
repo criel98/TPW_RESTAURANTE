@@ -77,3 +77,42 @@ h2{
     text-align: center;
     padding: 15px;
 }
+
+/*Formulario de reclamos */
+.formulario{
+width:500px;
+max-width: 100%;
+margin:auto;
+margin-top: 30px;
+padding: 20px;
+box-shadow: 0 0 20px 1px rgba(0,0,0,0.3); /* 0 en desplazamiento, 20 en difuminado, rgba los colores, el 0.3 es la transprencia*/
+position:relative; /*Porque después se va a posicionar otro elemento en base al formulario*/
+font-family: Arial;
+background: #FFF3E0;
+}
+
+.formulario_submit{
+background: green;
+color:#fff;
+padding: 10px 20px;
+cursor:pointer;
+border:none;
+margin:8px;
+}
+.formulario_submit:hover{
+background: #229797;
+}
+
+.formulario_titulo{
+text-align: center;
+margin-top: 0;
+color:rgba(0,0,0,0.7);
+}
+.formulario_input,.formulario_label,.formulario_submit{
+display: flex; /*para que se aprecie uno debajo de otro*/
+width: 90%;
+}
+.formulario_area{
+    width:90%;
+    
+}
