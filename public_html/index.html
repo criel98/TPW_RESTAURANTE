@@ -1,85 +1,153 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-<title>El Buen Sabor</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device">
-<link href="CSS/styles.css" rel="stylesheet" type="text/css"/>
-</head>
+    <head>
+        <title>El Buen Sabor</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device">
+        <link href="CSS/styles.css" rel="stylesheet" type="text/css"/>
+    </head>
 
-<body class="PaginaRest">
+    <body class="PaginaRest">
 
-<header class="banner">
-    <h1>🍽️ El Buen Sabor</h1>
-    <p>Donde cada plato cuenta una historia</p>
-</header>
+        <header class="banner">
+            <img src="imagenes/Logo/LOGO.png" alt="" class="logo"/>
+            <h3>Donde cada plato cuenta una historia</h6>
+        </header>
 
-<nav>
-    <a href="#menu" class="nav-enlace">Menú</a>
-    <a href="#Nosotros" class="nav-enlace">Nosotros</a>
-    <a href="#experiencia" class="nav-enlace">Experiencia</a>
-    <a href="#pie" class="nav-enlace">Contacto</a>
-    <a href="reclamos.html" class="nav-enlace">Reclamos</a>
-</nav>
+        <nav>
+            <a href="#Productos" class="nav-enlace">Productos</a>
+            <a href="#Nosotros" class="nav-enlace">Nosotros</a>
+            <a href="#experiencia" class="nav-enlace">Experiencia</a>
+            <a href="reclamos.html" class="nav-enlace">Reclamos</a>
+        </nav>
 
-<section id="especial" class="especial">
-    <h2>🔥 Plato Especial de hoy 🔥</h2>
-    <p>🔥 Hoy: Parrilla Mixta con sabor único 🔥</p>
-</section>
-
-
-<section id="menu">
-    <h2>🍴 Nuestro Menú</h2>
-
-    <div class="contenedor">
-        <div class="card">
-            <img src="imagenes/pollo.jpeg" width="100%">
-            <h3>🍗 Pollo Broster</h3>
-            <p>Crujiente por fuera, jugoso por dentro</p>
-        </div>
-
-        <div class="card">
-            <img src="imagenes/Pasta.jpeg" width="100%">
-            <h3>🍝 Pasta Italiana</h3>
-            <p>Receta tradicional con toque casero</p>
-        </div>
-
-        <div class="card">
-            <img src="imagenes/Ensalada.jpeg" width="100%">
-            <h3>🥑 Ensalada Fresh</h3>
-            <p>Natural, ligera y deliciosa</p>
-        </div>
-    </div>
-</section>
-
-
-<section id="experiencia">
-    <h2>⭐ Experiencia</h2>
-
-    <div class="contenedor">
-        <div class="card">
-            <h3>Ambiente</h3>
-            <p>Un lugar cómodo y acogedor</p>
-        </div>
-
-        <div class="card">
-            <h3>Calidad</h3>
-            <p>Ingredientes frescos siempre</p>
-        </div>
-
-        <div class="card">
-            <h3>Servicio</h3>
-            <p>Atención rápida y amable</p>
-        </div>
-    </div>
-</section>
-<footer id="pie" class="pie">
-    <h4>📍 Lima - Perú | 📞 999 999 999</h4>
-</footer>
-
-</body>
+        <section id="Nosotros" class="bannervid">
+            <iframe 
+                src="https://www.youtube.com/embed/U0dW24WEgvE?autoplay=1&mute=1&controls=0&loop=1&playlist=U0dW24WEgvE"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen>
+            </iframe>
+        </section>
 
 
 
+        <h1> Nuestros productos</h1>
+
+
+
+        <section id="Productos" class="container flex text-center">
+
+            <div class="columna">
+                <h2>Hamburguesa Clásica</h2>
+                <hr>
+                <p class="descripcion">
+                    Hamburguesa 100% carne de res a la parrilla con lechuga, 
+                    tomate, cebolla, kétchup y mayonesa. 
+                </p> 
+                <img src="imagenes/Productos/Clasica.jpeg" alt="" class="img" />
+                <h3 class="precio">S/ 20.00</h3>
+                <a href="#" class="btn-detalle">Ver detalle</a>
+            </div>
+
+
+            <div class="columna">
+                <h2>Hamburguesa grande</h2>
+                <hr>
+                <p class="descripcion">
+                    Hamburguesa 100% carne de res a la parrilla con tomate, 
+                    lechuga, mayonesa, kétchup, pepinillos y cebolla.
+                </p> 
+                <img src="imagenes/Productos/hamburguesa grande.jpeg" alt="" class="img" />
+                <h3 class="precio">S/ 30.00</h3>
+                <a href="#" class="btn-detalle">Ver detalle</a>
+            </div>
+
+
+            <div class="columna">
+                <h2>Doble carne con Tocino</h2>
+                <hr>
+                <p class="descripcion">
+                    Doble hamburguesa 100% carne de res a la parrilla, queso y tocino. 
+                </p> 
+                <img src="imagenes/Productos/doble con queso.jpeg" alt="" class="img" />
+                <h3 class="precio">S/ 28.00</h3>
+                <a href="#" class="btn-detalle">Ver detalle</a>
+                <br><br>
+            </div>
+
+
+            <div class="columna">
+                <h2>Hamburguesa tejana</h2>
+                <hr>
+                <p class="descripcion">
+                    Hamburguesa 100% carne de res a la parrilla con queso, 
+                    tocino, tomate, lechuga, mayonesa, BBQ, pepinillos y cebolla.
+                </p> 
+                <img src="imagenes/Productos/Tejana.jpeg" alt="" class="img" />
+                <h3 class="precio">S/ 22.00</h3>
+                <a href="#" class="btn-detalle">Ver detalle</a>
+                <br><br>
+            </div>
+
+
+            <div class="columna">
+                <h2>Doble con queso</h2>
+                <hr>
+                <p class="descripcion">
+                    Doble hamburguesa 100% carne de res a la parrilla con queso,
+                    pepinillos, mostaza y kétchup.
+                </p> 
+                <img src="imagenes/Productos/doble con queso.jpeg" alt="" class="img" />
+                <h3 class="precio">S/ 30.00</h3>
+                <a href="#" class="btn-detalle">Ver detalle</a>
+                <br><br>
+            </div>
+
+
+            <div class="columna">
+                <h2>Nuggets</h2>
+                <hr>
+                <p class="descripcion">
+                    10 nuggets de pollo dorados y crujientes, perfectos para compartir
+                </p> 
+                <img src="imagenes/Productos/nugets.jpeg" alt="" class="img" />
+                <h3 class="precio">S/ 16.00</h3>
+                <a href="#" class="btn-detalle">Ver detalle</a>
+                <br><br>
+            </div>
+
+        </section> 
+
+
+        <section id="experiencia">
+            <h2>⭐ Experiencia</h2>
+
+            <div class="contenedor">
+                <div class="card">
+                    <h3>Ambiente</h3>
+                    <img src="imagenes/Detalles/local.jpg" width="100%">
+                    <p>Un lugar cómodo y acogedor</p>
+                </div>
+
+                <div class="card">
+                    <h3>Calidad</h3>
+                    <img src="imagenes/Detalles/calidad.jpg" width="100%">
+                    <p>Ingredientes frescos siempre</p>
+                </div>
+
+                <div class="card">
+                    <h3>Servicio</h3>
+                    <img src="imagenes/Detalles/servicio.jpg" width="100%">
+                    <p>Atención rápida y amable</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="pie">
+            <h4>📍 Lima - Perú | 📞 999 999 999</h4>
+        </footer>
+
+    </body>
 </html>

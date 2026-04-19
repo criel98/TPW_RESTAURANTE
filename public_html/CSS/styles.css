@@ -1,38 +1,59 @@
 .PaginaRest{
     margin: 0;
     font-family: Arial;
-    background: #FFF3E0;
+    background: #e9e0d2;
 }
 
 /* BANNER */
 .banner{
-    background: linear-gradient(#F57C00, #FFB74D);
-    color: white;
+    background: linear-gradient(#200000, #bd0000);
+    color: rgb(255, 255, 255);
     text-align: center;
-    padding: 40px;
+    padding: 1px;
+}
+
+.logo{
+    width: 250px;
+    display: block;
+    margin: 2px auto;
+}
+
+.bannervid{
+    padding: 0;
+}
+
+.bannervid iframe{
+    width: 100%;
+    height: 600px;
 }
 
 /* NAV */
 nav{
     display: flex;
     justify-content: center;
-    background: #2E7D32;
+    background: #000000f1;
 }
 
 .nav-enlace{
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 15px 25px;
     text-decoration: none;
 }
 
 .nav-enlace:hover{
-    background: #F57C00;
+    background: #bd0000;
 }
 
 /* TITULOS */
 h2{
     text-align: center;
-    color: #5D4037;
+    color: #000000;
+}
+
+/* TITULOS */
+h1{
+    text-align: center;
+    color: #000000;
 }
 
 /* CONTENEDOR FLEX */
@@ -56,26 +77,78 @@ h2{
     background: #FFE0B2;
 }
 
-/* ESPECIAL */
-.especial{
-    background: #5D4037;
-    color: white;
-    text-align: center;
-    padding: 30px;
 
-h2{
-    text-align: center;
-    color: white;
-
-}
-}
 
 /* FOOTER */
 .pie{
-    background: #2E7D32;
+    background: linear-gradient(#200000, #bd0000);
     color: white;
     text-align: center;
     padding: 15px;
+}
+
+/*------------------------------------------------------------------------------*/
+
+/* Descripcion de los productos*/
+.descripcion{
+ color:#424242;
+ padding: 1px 10px 10px 5px;
+}
+
+.img_productos{
+ max-width: 100%;
+}
+
+.containers{
+ margin:0 auto;
+ width:90%;
+}
+
+.flex{
+ display:flex;
+ flex-wrap:wrap;
+ justify-content: center;
+}
+
+.text-center{
+ text-align:center;
+}
+
+img{
+ width: 70%;
+ height:auto;
+}
+
+/*Aplicando estilo a las 3 columnas creadas en la sección del producto*/
+.columna{
+ background:#E5E1E1;
+ color:#1e1e1e;
+ border:2px solid #333;
+ margin: 15px;
+ padding:5px;
+ border-radius:10px;
+ box-shadow: 10px 10px 5px #7a2e2e;
+ width: 23%; /*100%; luego hacer los cambios a 29% porque hay 3 bloques */
+ box-sizing:border-box;
+}
+
+.btn-detalle{
+ background: rgb(179, 0, 0);
+ display:block;
+ padding: 10px;
+ color:#fff;
+ text-decoration: none;
+ border-radius: 3px;
+ margin:4px;
+}
+
+.btn-detalle:hover{
+ background: #0b4800;
+}
+
+.precio{
+    margin-right: 20px;
+    font-weight: bold;
 }
 
 /*Formulario de reclamos */
@@ -84,11 +157,14 @@ width:500px;
 max-width: 100%;
 margin:auto;
 margin-top: 30px;
+margin-bottom: 50px; /* <--- Separar del footer */
 padding: 20px;
 box-shadow: 0 0 20px 1px rgba(0,0,0,0.3); /* 0 en desplazamiento, 20 en difuminado, rgba los colores, el 0.3 es la transprencia*/
 position:relative; /*Porque después se va a posicionar otro elemento en base al formulario*/
 font-family: Arial;
-background: #FFF3E0;
+background: #ffffff;
+border-radius: 8px;
+border: 1px solid #ddd;
 }
 
 .formulario_submit{
@@ -100,7 +176,7 @@ border:none;
 margin:8px;
 }
 .formulario_submit:hover{
-background: #229797;
+background: #0b4800;
 }
 
 .formulario_titulo{
@@ -108,11 +184,18 @@ text-align: center;
 margin-top: 0;
 color:rgba(0,0,0,0.7);
 }
-.formulario_input,.formulario_label,.formulario_submit{
-display: flex; /*para que se aprecie uno debajo de otro*/
-width: 90%;
+
+.formulario_input, .formulario_label, .formulario_submit {
+    display: flex; 
+    flex-direction: column; /* Esto asegura que el input baje respecto al label */
+    width: 100%; /* Ajustado al 100% del contenedor del form */
+    margin-bottom: 10px; /* Espacio entre campos */
+    box-sizing: border-box; /* Evita que el padding agrande el input más de la cuenta */
 }
-.formulario_area{
-    width:90%;
-    
+
+.formulario_area {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    font-family: Arial;
 }
