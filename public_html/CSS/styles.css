@@ -151,51 +151,64 @@ img{
     font-weight: bold;
 }
 
-/*Formulario de reclamos */
-.formulario{
-width:500px;
-max-width: 100%;
-margin:auto;
-margin-top: 30px;
-margin-bottom: 50px; /* <--- Separar del footer */
-padding: 20px;
-box-shadow: 0 0 20px 1px rgba(0,0,0,0.3); /* 0 en desplazamiento, 20 en difuminado, rgba los colores, el 0.3 es la transprencia*/
-position:relative; /*Porque después se va a posicionar otro elemento en base al formulario*/
-font-family: Arial;
-background: #ffffff;
-border-radius: 8px;
-border: 1px solid #ddd;
-}
-
-.formulario_submit{
-background: green;
-color:#fff;
-padding: 10px 20px;
-cursor:pointer;
-border:none;
-margin:8px;
-}
-.formulario_submit:hover{
-background: #0b4800;
-}
-
-.formulario_titulo{
-text-align: center;
-margin-top: 0;
-color:rgba(0,0,0,0.7);
-}
-
-.formulario_input, .formulario_label, .formulario_submit {
-    display: flex; 
-    flex-direction: column; /* Esto asegura que el input baje respecto al label */
-    width: 100%; /* Ajustado al 100% del contenedor del form */
-    margin-bottom: 10px; /* Espacio entre campos */
-    box-sizing: border-box; /* Evita que el padding agrande el input más de la cuenta */
-}
-
-.formulario_area {
+/* --- Bloque del Contenedor --- */
+.formulario {
     width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 10px;
+    max-width: 500px;
+    margin: 30px auto 50px auto; /* Arriba, Centro, Abajo, Centro */
+    padding: 20px;
+    box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+    position: relative;
     font-family: Arial;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.formulario_titulo {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: rgba(0,0,0,0.7);
+}
+
+/* --- Los Labels (Texto) --- */
+/* Los separamos para que NO tengan padding y se alineen a la izquierda */
+.formulario_label {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 5px; /* Espacio pequeño hacia la caja */
+    color: #333;
+}
+
+/* --- Los Inputs, Select y Textarea (Cajas) --- */
+.formulario_input, 
+.formulario_area, 
+.formulario_submit {
+    display: block;
+    width: 100%;
+    box-sizing: border-box; 
+    padding: 10px;
+    margin-bottom: 15px; /* Más espacio aquí para separar grupos */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: Arial;
+}
+
+/* --- El Botón (Personalización) --- */
+.formulario_submit {
+    background: green;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.formulario_submit:hover {
+    background: #0b4800; /* El verde oscuro que ya tenías */
 }
