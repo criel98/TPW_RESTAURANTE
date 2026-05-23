@@ -1,221 +1,153 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>El Buen Sabor</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="CSS/styles.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <head>
+        <title>El Buen Sabor</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device">
+        <link href="CSS/styles.css" rel="stylesheet" type="text/css"/>
+    </head>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Adamina&family=Alex+Brush&family=Arbutus+Slab&family=Berkshire+Swash&display=swap"
-        rel="stylesheet">
-</head>
+    <body class="PaginaRest">
 
-<body class="PaginaRest">
+        <header class="banner">
+            <img src="imagenes/Logo/LOGO.png" alt="" class="logo"/>
+            <h3>Donde cada plato cuenta una historia</h6>
+        </header>
 
-    <header class="banner">
-        <div class="banner-overlay"></div>
-        <div class="banner-llamas"></div>
-        <div class="banner-contenido">
-            <img src="imagenes/Logo/LOGO.png" alt="El Buen Sabor" class="logo" />
-            <p class="banner-slogan">Donde cada plato cuenta una historia</p>
-        </div>
-    </header>
+        <nav>
+            <a href="#Productos" class="nav-enlace">Productos</a>
+            <a href="#Nosotros" class="nav-enlace">Nosotros</a>
+            <a href="#experiencia" class="nav-enlace">Experiencia</a>
+            <a href="reclamos.html" class="nav-enlace">Reclamos</a>
+        </nav>
 
-    <nav>
-        <a href="#Nosotros" class="nav-enlace">
-            <i class="fa-solid fa-users"></i> Nosotros  <!-- Agregamos icono de usuarios y asi con todos con (Font Awesome) -->
-        </a>
-        
-        <a href="#Productos" class="nav-enlace">
-            <i class="fa-solid fa-utensils"></i> Productos
-        </a>
-     
-        <a href="#experiencia" class="nav-enlace">
-           <i class="fa-solid fa-star"></i> Experiencia
-        </a>
-        <a href="reclamos.html" class="nav-enlace">
-            <i class="fa-solid fa-comment-dots"></i> Reclamos
-        </a>
-    </nav>
-
-<section id="Nosotros">
-
-    <div class="contenedor-nosotros">
-
-        <!-- TEXTO -->
-        <div class="nosotros-texto">
-            <h1 class="titulo">¿Quiénes somos?</h1>
-
-            <p class="parrafo">
-                Somos <strong>El Buen Sabor</strong>, una hamburguesería con pasión por la cocina
-                artesanal y el sabor auténtico. Nació con el sueño de ofrecer hamburguesas únicas,
-                elaboradas con ingredientes frescos y seleccionados, para que cada visita sea una
-                experiencia memorable.
-            </p>
-
-            <h1 class="titulo">Misión</h1>
-            <p class="parrafo">
-                Preparar y ofrecer hamburguesas de alta calidad, con ingredientes frescos y sabores
-                auténticos, brindando una experiencia gastronómica única.
-            </p>
-
-            <h1 class="titulo">Visión</h1>
-            <p class="parrafo">
-                Ser la hamburguesería más querida y reconocida, destacándonos por nuestra calidad
-                y creatividad en cada receta.
-            </p>
-        </div>
-
-        <!-- VIDEO -->
-        <div class="nosotros-video">
-            <iframe src="https://www.youtube.com/embed/U0dW24WEgvE?autoplay=1&mute=1&controls=0&loop=1&playlist=U0dW24WEgvE"
-                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+        <section id="Nosotros" class="bannervid">
+            <iframe 
+                src="https://www.youtube.com/embed/U0dW24WEgvE?autoplay=1&mute=1&controls=0&loop=1&playlist=U0dW24WEgvE"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen>
             </iframe>
-        </div>
-
-    </div>
-
-</section>
-
-
-    <h1> Nuestros productos</h1>
+        </section>
 
 
 
-    <section id="Productos" class="container flex text-center">
- 
-    <div class="columna">
-        <h2>Hamburguesa Clásica</h2>
-            <hr>
-        <p class="descripcion">
-                Hamburguesa 100% carne de res a la parrilla con lechuga,
-                tomate, cebolla, kétchup y mayonesa.
-        </p>
-            <img src="imagenes/Productos/Clasica.jpeg" alt="" class="img" />
-          <h3 class="precio">S/ 20.00</h3>
-          <a href="#" class="btn-detalle">Ver detalle</a>
-        </div>
-
- 
-    <div class="columna">
-            <h2>Hamburguesa grande</h2>
-            <hr>
-        <p class="descripcion">
-                Hamburguesa 100% carne de res a la parrilla con tomate,
-                lechuga, mayonesa, kétchup, pepinillos y cebolla.
-        </p>
-            <img src="imagenes/Productos/hamburguesa grande.jpeg" alt="" class="img" />
-          <h3 class="precio">S/ 30.00</h3>
-          <a href="#" class="btn-detalle">Ver detalle</a>
-        </div>
-
- 
-    <div class="columna">
-            <h2>Doble carne con Tocino</h2>
-            <hr>
-        <p class="descripcion">
-                Doble hamburguesa 100% carne de res a la parrilla, queso y tocino.
-        </p>
-            <img src="imagenes/Productos/doble con queso.jpeg" alt="" class="img" />
-          <h3 class="precio">S/ 28.00</h3>
-          <a href="#" class="btn-detalle">Ver detalle</a>
-            <br><br>
-        </div>
-
- 
-    <div class="columna">
-            <h2>Hamburguesa tejana</h2>
-            <hr>
-        <p class="descripcion">
-                Hamburguesa 100% carne de res a la parrilla con queso,
-                tocino, tomate, lechuga, mayonesa, BBQ, pepinillos y cebolla.
-        </p>
-            <img src="imagenes/Productos/Tejana.jpeg" alt="" class="img" />
-          <h3 class="precio">S/ 22.00</h3>
-          <a href="#" class="btn-detalle">Ver detalle</a>
-            <br><br>
-        </div>
-
- 
-    <div class="columna">
-            <h2>Doble con queso</h2>
-            <hr>
-        <p class="descripcion">
-                Doble hamburguesa 100% carne de res a la parrilla con queso,
-                pepinillos, mostaza y kétchup.
-        </p>
-            <img src="imagenes/Productos/doble con queso.jpeg" alt="" class="img" />
-          <h3 class="precio">S/ 30.00</h3>
-          <a href="#" class="btn-detalle">Ver detalle</a>
-            <br><br>
-        </div>
-
- 
-    <div class="columna">
-        <h2>Nuggets</h2>
-            <hr>
-        <p class="descripcion">
-                10 nuggets de pollo dorados y crujientes, perfectos para compartir
-        </p>
-            <img src="imagenes/Productos/nugets.jpeg" alt="" class="img" />
-          <h3 class="precio">S/ 16.00</h3>
-          <a href="#" class="btn-detalle">Ver detalle</a>
-            <br><br>
-    </div>
- 
-  </section>
+        <h1> Nuestros productos</h1>
 
 
-    <section id="experiencia">
-        <h2>⭐ Experiencia</h2>
 
-        <div class="contenedor">
-            <div class="card">
-                <h3>Ambiente</h3>
-                <img src="imagenes/Detalles/local.jpg" width="100%">
-                <p>Un lugar cómodo y acogedor</p>
+        <section id="Productos" class="container flex text-center">
+
+            <div class="columna">
+                <h2>Hamburguesa Clásica</h2>
+                <hr>
+                <p class="descripcion">
+                    Hamburguesa 100% carne de res a la parrilla con lechuga, 
+                    tomate, cebolla, kétchup y mayonesa. 
+                </p> 
+                <img src="imagenes/Productos/Clasica.jpeg" alt="" class="img" />
+                <h3 class="precio">S/ 20.00</h3>
+                <a href="#" class="btn-detalle">Ver detalle</a>
             </div>
 
-            <div class="card">
-                <h3>Calidad</h3>
-                <img src="imagenes/Detalles/calidad.jpg" width="100%">
-                <p>Ingredientes frescos siempre</p>
+
+            <div class="columna">
+                <h2>Hamburguesa grande</h2>
+                <hr>
+                <p class="descripcion">
+                    Hamburguesa 100% carne de res a la parrilla con tomate, 
+                    lechuga, mayonesa, kétchup, pepinillos y cebolla.
+                </p> 
+                <img src="imagenes/Productos/hamburguesa grande.jpeg" alt="" class="img" />
+                <h3 class="precio">S/ 30.00</h3>
+                <a href="#" class="btn-detalle">Ver detalle</a>
             </div>
 
-            <div class="card">
-                <h3>Servicio</h3>
-                <img src="imagenes/Detalles/servicio.jpg" width="100%">
-                <p>Atención rápida y amable</p>
+
+            <div class="columna">
+                <h2>Doble carne con Tocino</h2>
+                <hr>
+                <p class="descripcion">
+                    Doble hamburguesa 100% carne de res a la parrilla, queso y tocino. 
+                </p> 
+                <img src="imagenes/Productos/doble con queso.jpeg" alt="" class="img" />
+                <h3 class="precio">S/ 28.00</h3>
+                <a href="#" class="btn-detalle">Ver detalle</a>
+                <br><br>
             </div>
-        </div>
-    </section>
 
-    <footer class="pie">
-        <h5>Siguenos en</h5>
-        <div class="cajas_red">
-            <a href="https://www.instagram.com/" class="Redes_Sociales" target="_blank">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://www.facebook.com/" class="Redes_Sociales" target="_blank">
-                <i class="fa-brands fa-facebook"></i>
-            </a>
-            <a href="https://www.whatsapp.com/?lang=es" class="Redes_Sociales" target="_blank">
-                <i class="fa-brands fa-whatsapp"></i>
-            </a>
-            <a href="https://www.tiktok.com/?lang=es" class="Redes_Sociales" target="_blank">
-                <i class="fa-brands fa-tiktok"></i>
-            </a>
-        </div>
-        <h6>📍 Lima - Perú | 📞 999 999 999</h6>
-    </footer>
 
-</body>
+            <div class="columna">
+                <h2>Hamburguesa tejana</h2>
+                <hr>
+                <p class="descripcion">
+                    Hamburguesa 100% carne de res a la parrilla con queso, 
+                    tocino, tomate, lechuga, mayonesa, BBQ, pepinillos y cebolla.
+                </p> 
+                <img src="imagenes/Productos/Tejana.jpeg" alt="" class="img" />
+                <h3 class="precio">S/ 22.00</h3>
+                <a href="#" class="btn-detalle">Ver detalle</a>
+                <br><br>
+            </div>
 
+
+            <div class="columna">
+                <h2>Doble con queso</h2>
+                <hr>
+                <p class="descripcion">
+                    Doble hamburguesa 100% carne de res a la parrilla con queso,
+                    pepinillos, mostaza y kétchup.
+                </p> 
+                <img src="imagenes/Productos/doble con queso.jpeg" alt="" class="img" />
+                <h3 class="precio">S/ 30.00</h3>
+                <a href="#" class="btn-detalle">Ver detalle</a>
+                <br><br>
+            </div>
+
+
+            <div class="columna">
+                <h2>Nuggets</h2>
+                <hr>
+                <p class="descripcion">
+                    10 nuggets de pollo dorados y crujientes, perfectos para compartir
+                </p> 
+                <img src="imagenes/Productos/nugets.jpeg" alt="" class="img" />
+                <h3 class="precio">S/ 16.00</h3>
+                <a href="#" class="btn-detalle">Ver detalle</a>
+                <br><br>
+            </div>
+
+        </section> 
+
+
+        <section id="experiencia">
+            <h2>⭐ Experiencia</h2>
+
+            <div class="contenedor">
+                <div class="card">
+                    <h3>Ambiente</h3>
+                    <img src="imagenes/Detalles/local.jpg" width="100%">
+                    <p>Un lugar cómodo y acogedor</p>
+                </div>
+
+                <div class="card">
+                    <h3>Calidad</h3>
+                    <img src="imagenes/Detalles/calidad.jpg" width="100%">
+                    <p>Ingredientes frescos siempre</p>
+                </div>
+
+                <div class="card">
+                    <h3>Servicio</h3>
+                    <img src="imagenes/Detalles/servicio.jpg" width="100%">
+                    <p>Atención rápida y amable</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="pie">
+            <h4>📍 Lima - Perú | 📞 999 999 999</h4>
+        </footer>
+
+    </body>
 </html>

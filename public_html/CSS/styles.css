@@ -1,192 +1,70 @@
-.PaginaRest {
+.PaginaRest{
     margin: 0;
     font-family: Arial;
     background: #e9e0d2;
 }
 
-/* ── BANNER ─────── */
-.banner {
-    position: relative;
-    background: #0d0000;
+/* BANNER */
+.banner{
+    background: linear-gradient(#200000, #bd0000);
+    color: rgb(255, 255, 255);
     text-align: center;
-    padding: 0;
-    overflow: hidden;
-    min-height: 320px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 1px;
 }
 
-/* Gradiente rojo dramático de fondo */
-.banner-overlay {
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(ellipse 80% 60% at 50% 120%, #c0000088 0%, transparent 70%),
-        linear-gradient(180deg, #0d0000 0%, #2a0000 40%, #0d0000 100%);
-    z-index: 0;
-}
-
-/* Efecto de "calor" / llamas en la base */
-.banner-llamas {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 6px;
-    background: linear-gradient(90deg,
-            transparent 0%,
-            #ff4400 15%, #ff0000 30%, #ffaa00 50%, #ff0000 70%, #ff4400 85%,
-            transparent 100%);
-    filter: blur(2px);
-    z-index: 1;
-}
-
-/* Contenido del banner */
-.banner-contenido {
-    position: relative;
-    z-index: 2;
-    padding: 40px 20px 50px;
-}
-
-/* Logo */
-.logo {
-    width: 260px;
+.logo{
+    width: 250px;
     display: block;
-    margin: 0 auto 18px;
-    filter: drop-shadow(0 4px 24px #ff000055);
-    transition: transform 0.3s ease, filter 0.3s ease;
+    margin: 2px auto;
 }
 
-.logo:hover {
-    transform: scale(1.04);
-    filter: drop-shadow(0 6px 32px #ff000099);
+.bannervid{
+    padding: 0;
 }
 
-/* Slogan */
-.banner-slogan {
-    font-family: "Berkshire Swash", serif;
-    font-size: 1.2rem;
-    color: #f5d9bc;
-    margin: 0;
-    letter-spacing: 0.04em;
-    text-shadow: 0 2px 12px #00000088;
-}
-
-/* ── NAV ────────── */
-nav {
-    display: flex;
-    justify-content: center;
-    background: #0a0000;
-    border-bottom: 2px solid #bd0000;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 16px #00000088;
-}
-
-.nav-enlace {
-    color: #e8c8a8;
-    padding: 14px 24px;
-    text-decoration: none;
-    font-size: 0.88rem;
-    font-family: "Adamina", serif;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    transition: color 0.25s, background 0.25s;
-    display: flex;
-    align-items: center;
-    gap: 7px;
-}
-
-.nav-enlace:hover {
-    background: #bd0000;
-    color: #ffffff;
-}
-
-/* ── SECCIÓN NOSOTROS ──────*/
-#Nosotros {
-    background: #e9e0d2;
-    padding: 60px 20px;
-}
-
-/* CONTENEDOR GENERAL */
-.contenedor-nosotros {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    max-width: 1200px;
-    margin: auto;
-    flex-wrap: wrap;
-    /* RESPONSIVE */
-}
-
-/* TEXTO */
-.nosotros-texto {
-    flex: 1;
-    min-width: 300px;
-}
-
-/* VIDEO */
-.nosotros-video {
-    flex: 1;
-    min-width: 300px;
-}
-
-.nosotros-video iframe {
+.bannervid iframe{
     width: 100%;
-    height: 350px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px #00000055;
+    height: 600px;
+}
+
+/* NAV */
+nav{
+    display: flex;
+    justify-content: center;
+    background: #000000f1;
+}
+
+.nav-enlace{
+    color: rgb(255, 255, 255);
+    padding: 15px 25px;
+    text-decoration: none;
+}
+
+.nav-enlace:hover{
+    background: #bd0000;
 }
 
 /* TITULOS */
-.titulo {
-    font-family: "Adamina", serif;
-    font-size: 1.3rem;
-    color: #4d0000;
-    margin: 20px 0 10px;
-    border-bottom: 1px solid #e0c9b4;
-    padding-bottom: 5px;
-    text-transform: uppercase;
-}
-
-/* PÁRRAFOS */
-.parrafo {
-    font-family: "Adamina", serif;
-    font-size: 0.95rem;
-    line-height: 1.8;
-    color: #000;
-    text-align: justify;
-}
-
-.parrafo strong {
-    color: #a10505;
-
-}
-
-
-/* TITULOS */
-h2 {
+h2{
     text-align: center;
     color: #000000;
 }
 
-h1 {
+/* TITULOS */
+h1{
     text-align: center;
     color: #000000;
 }
 
 /* CONTENEDOR FLEX */
-.contenedor {
+.contenedor{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
 /* TARJETAS */
-.card {
+.card{
     background: white;
     width: 250px;
     margin: 15px;
@@ -195,83 +73,80 @@ h1 {
     text-align: center;
 }
 
-.card:hover {
+.card:hover{
     background: #FFE0B2;
 }
 
+
+
 /* FOOTER */
-.pie {
+.pie{
     background: linear-gradient(#200000, #bd0000);
     color: white;
     text-align: center;
     padding: 15px;
-
-    h5 {
-        text-align: left;
-        color: #ffffff;
-    }
-
 }
 
-/* Descripción de los productos*/
-.descripcion {
-    color: #424242;
-    padding: 1px 10px 10px 5px;
+/*------------------------------------------------------------------------------*/
+
+/* Descripcion de los productos*/
+.descripcion{
+ color:#424242;
+ padding: 1px 10px 10px 5px;
 }
 
-.img_productos {
-    max-width: 100%;
+.img_productos{
+ max-width: 100%;
 }
 
-.containers {
-    margin: 0 auto;
-    width: 90%;
+.containers{
+ margin:0 auto;
+ width:90%;
 }
 
-.flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.flex{
+ display:flex;
+ flex-wrap:wrap;
+ justify-content: center;
 }
 
-.text-center {
-    text-align: center;
+.text-center{
+ text-align:center;
 }
 
-img {
-    width: 70%;
-    height: auto;
+img{
+ width: 70%;
+ height:auto;
 }
 
 /*Aplicando estilo a las 3 columnas creadas en la sección del producto*/
-.columna {
-    background: #E5E1E1;
-    color: #1e1e1e;
-    border: 2px solid #333;
-    margin: 15px;
-    padding: 5px;
-    border-radius: 10px;
-    box-shadow: 10px 10px 5px #7a2e2e;
-    width: 23%;
-    /*100%; luego hacer los cambios a 29% porque hay 3 bloques */
-    box-sizing: border-box;
+.columna{
+ background:#E5E1E1;
+ color:#1e1e1e;
+ border:2px solid #333;
+ margin: 15px;
+ padding:5px;
+ border-radius:10px;
+ box-shadow: 10px 10px 5px #7a2e2e;
+ width: 23%; /*100%; luego hacer los cambios a 29% porque hay 3 bloques */
+ box-sizing:border-box;
 }
 
-.btn-detalle {
-    background: rgb(179, 0, 0);
-    display: block;
-    padding: 10px;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 3px;
-    margin: 4px;
+.btn-detalle{
+ background: rgb(179, 0, 0);
+ display:block;
+ padding: 10px;
+ color:#fff;
+ text-decoration: none;
+ border-radius: 3px;
+ margin:4px;
 }
 
-.btn-detalle:hover {
-    background: #0b4800;
+.btn-detalle:hover{
+ background: #0b4800;
 }
 
-.precio {
+.precio{
     margin-right: 20px;
     font-weight: bold;
 }
@@ -280,10 +155,9 @@ img {
 .formulario {
     width: 100%;
     max-width: 500px;
-    margin: 30px auto 50px auto;
-    /* Arriba, Centro, Abajo, Centro */
+    margin: 30px auto 50px auto; /* Arriba, Centro, Abajo, Centro */
     padding: 20px;
-    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
     position: relative;
     font-family: Arial;
     background: #ffffff;
@@ -296,7 +170,7 @@ img {
     text-align: center;
     margin-top: 0;
     margin-bottom: 20px;
-    color: rgba(0, 0, 0, 0.7);
+    color: rgba(0,0,0,0.7);
 }
 
 /* --- Los Labels (Texto) --- */
@@ -306,21 +180,19 @@ img {
     width: 100%;
     text-align: left;
     font-weight: bold;
-    margin-bottom: 5px;
-    /* Espacio pequeño hacia la caja */
+    margin-bottom: 5px; /* Espacio pequeño hacia la caja */
     color: #333;
 }
 
 /* --- Los Inputs, Select y Textarea (Cajas) --- */
-.formulario_input,
-.formulario_area,
+.formulario_input, 
+.formulario_area, 
 .formulario_submit {
     display: block;
     width: 100%;
-    box-sizing: border-box;
+    box-sizing: border-box; 
     padding: 10px;
-    margin-bottom: 15px;
-    /* Más espacio aquí para separar grupos */
+    margin-bottom: 15px; /* Más espacio aquí para separar grupos */
     border: 1px solid #ccc;
     border-radius: 4px;
     font-family: Arial;
@@ -338,20 +210,5 @@ img {
 }
 
 .formulario_submit:hover {
-    background: #0b4800;
-    /* El verde oscuro que ya tenías */
-}
-
-.Redes_Sociales {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    display: inline-block;
-    width: fit-content;
-}
-
-.cajas_red {
-    display: flex;
-    flex-direction: row;
-    text-align: left;
-    gap: 10px
+    background: #0b4800; /* El verde oscuro que ya tenías */
 }
