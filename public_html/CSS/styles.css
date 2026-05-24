@@ -1,13 +1,26 @@
-.PaginaRest {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #e9e0d2;
+/* ── VARIABLES GLOBALES (Configuración de Marca) ── */
+:root {
+    --color-principal: rgb(179, 0, 0);
+    --color-principal-hover: rgb(140, 0, 0);
+    --color-fondo-crema: #e9e0d2;
+    --color-fondo-oscuro: #0d0000;
+    --color-hover-dorado: #FFE0B2;
+    --color-texto-claro: #f5d9bc;
+    --fuente-principal: Arial, sans-serif;
+    --fuente-titulos: "Adamina", serif;
 }
 
-/* ── BANNER ─────── */
+/* ── CONFIGURACIÓN BASE ── */
+.PaginaRest {
+    margin: 0;
+    font-family: var(--fuente-principal);
+    background: var(--color-fondo-crema);
+}
+
+/* ── BANNER PRINCIPAL ─────── */
 .banner {
     position: relative;
-    background: #0d0000;
+    background: var(--color-fondo-oscuro);
     text-align: center;
     padding: 0;
     overflow: hidden;
@@ -62,13 +75,13 @@
 .banner-slogan {
     font-family: "Berkshire Swash", serif;
     font-size: 1.2rem;
-    color: #f5d9bc;
+    color: var(--color-texto-claro);
     margin: 0;
     letter-spacing: 0.04em;
     text-shadow: 0 2px 12px #00000088;
 }
 
-/* ── NAV RESPONSIVO ─────── */
+/* ── MENU DE NAVEGACIÓN ─────── */
 nav {
     display: flex;
     justify-content: center;
@@ -86,7 +99,7 @@ nav {
     padding: 14px 24px;
     text-decoration: none;
     font-size: 0.88rem;
-    font-family: "Adamina", serif;
+    font-family: var(--fuente-titulos);
     letter-spacing: 0.08em;
     text-transform: uppercase;
     transition: color 0.25s, background 0.25s;
@@ -100,14 +113,14 @@ nav {
     color: #ffffff;
 }
 
-/* ── SECCIÓN CARRUSEL DE PROMOCIONES ─────── */
+/* ── SECCIÓN: CARRUSEL DE PROMOCIONES ─────── */
 .carrusel {
     width: 100%;
     max-width: 900px;
     margin: 15px auto 35px auto;
     overflow: hidden;
     border-radius: 15px;
-    background: #0d0000;
+    background: var(--color-fondo-oscuro);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
@@ -130,20 +143,14 @@ nav {
     text-align: center;
 }
 
-.promo-1 {
-    background: linear-gradient(135deg, #bd0000 0%, #3a0000 100%);
-}
-.promo-2 {
-    background: linear-gradient(135deg, #2a0000 0%, #a10505 100%);
-}
-.promo-3 {
-    background: linear-gradient(135deg, #8c0000 0%, #150000 100%);
-}
+.promo-1 { background: linear-gradient(135deg, #bd0000 0%, #3a0000 100%); }
+.promo-2 { background: linear-gradient(135deg, #2a0000 0%, #a10505 100%); }
+.promo-3 { background: linear-gradient(135deg, #8c0000 0%, #150000 100%); }
 
 .slide h3 {
-    font-family: "Adamina", serif;
+    font-family: var(--fuente-titulos);
     font-size: 1.6rem;
-    color: #f5d9bc;
+    color: var(--color-texto-claro);
     margin: 0 0 8px 0;
     text-transform: uppercase;
     letter-spacing: 0.03em;
@@ -162,7 +169,7 @@ nav {
     100% { transform: translateX(0%); }
 }
 
-/* ── SECCIÓN NOSOTROS (DOS COLUMNAS) ────── */
+/* ── SECCIÓN: NOSOTROS (GRID LAYOUT) ────── */
 .nosotros-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -191,9 +198,9 @@ nav {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* TITULOS GENERALES */
+/* ── TEXTOS Y ESTRUCTURAS GENERALES ── */
 .titulo {
-    font-family: "Adamina", serif;
+    font-family: var(--fuente-titulos);
     font-size: 1.3rem;
     color: #4d0000;
     margin: 10px 0 10px;
@@ -203,7 +210,7 @@ nav {
 }
 
 .parrafo {
-    font-family: "Adamina", serif;
+    font-family: var(--fuente-titulos);
     font-size: 0.95rem;
     line-height: 1.8;
     color: #000;
@@ -225,13 +232,23 @@ h2, h1 {
     text-align: left;
     margin-top: 40px;
     margin-bottom: 15px;
-    font-family: "Adamina", serif;
+    font-family: var(--fuente-titulos);
     color: #4d0000;
     text-transform: uppercase;
     font-size: 1.2rem;
 }
 
-/* ── CORRECCIÓN SECCIÓN EXPERIENCIA ─────── */
+.containers {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.titulo-principal {
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+
+/* ── SECCIÓN: EXPERIENCIA ─────── */
 .contenedor {
     display: flex;
     justify-content: center;
@@ -251,11 +268,10 @@ h2, h1 {
 }
 
 .card:hover {
-    background: #FFE0B2;
+    background: var(--color-hover-dorado);
     transform: translateY(-5px);
 }
 
-/* Forzamos alto idéntico en las imágenes sin deformarlas */
 .card img {
     width: 100%;
     height: 180px;
@@ -265,79 +281,13 @@ h2, h1 {
 }
 
 .card p {
-    font-family: "Adamina", serif;
+    font-family: var(--fuente-titulos);
     font-size: 0.95rem;
     margin: 10px 0 0 0;
     color: #333;
 }
 
-/* ── CORRECCIÓN PIE DE PÁGINA (FOOTER) ─────── */
-.pie {
-    background: linear-gradient(#200000, #bd0000);
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-.pie h5 {
-    text-align: center;
-    color: #ffffff;
-    font-size: 1.1rem;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.cajas_red {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-}
-
-.Redes_Sociales {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    font-size: 1.5rem;
-    transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.Redes_Sociales:hover {
-    color: #FFE0B2;
-    transform: scale(1.2);
-}
-
-.pie h6 {
-    margin: 5px 0 0 0;
-    font-size: 0.95rem;
-    color: #f5d9bc;
-    letter-spacing: 0.03em;
-}
-
-/* PRODUCTOS DETALLES */
-.descripcion {
-    color: #424242;
-    text-align: center;
-    min-height: 55px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    font-size: 0.9rem;
-}
-
-.img_productos {
-    max-width: 100%;
-    height: auto;
-}
-
-.containers {
-    margin: 0 auto;
-    width: 90%;
-}
-
+/* ── FILA GRID DE TARJETAS DE PRODUCTO ── */
 .flex {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -350,15 +300,7 @@ h2, h1 {
     text-align: center;
 }
 
-.img {
-    width: 60%;
-    max-height: 140px;
-    object-fit: contain;
-    margin: 0 auto;
-    display: block;
-}
-
-/* ── TARJETA DE PRODUCTO ─────── */
+/* ── COMPONENTES: TARJETAS DE PRODUCTO ─────── */
 .product-card {
     background: #E5E1E1;
     color: #1e1e1e;
@@ -367,39 +309,26 @@ h2, h1 {
     box-shadow: 10px 10px 5px #7a2e2e;
     padding: 20px;
     box-sizing: border-box;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 400px;
 }
 
-.btn-detalle {
-    background: rgb(179, 0, 0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 12px 0px; 
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    
-    width: 90%;
-    margin-left: auto;   
-    margin-right: auto;  
-    margin-top: auto;    
-    margin-bottom: 5px; 
-    
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.1s ease;
+.descripcion {
+    color: #424242;
+    text-align: center;
+    min-height: 55px;
+    margin: 5px 0 5px 0;
+    font-size: 0.9rem;
 }
 
-.btn-detalle:hover {
-    background: rgb(140, 0, 0);
-}
-
-.btn-detalle:active {
-    transform: scale(0.98);
+.img {
+    width: 60%;
+    max-height: 140px;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
 }
 
 .precio {
@@ -409,7 +338,25 @@ h2, h1 {
     margin-top: 5px;
 }
 
-/* ── FORMULARIO ─────── */
+.btn-detalle {
+    background: var(--color-principal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 0px; 
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    width: 90%;
+    margin: auto auto 5px auto; /* Combina márgenes de forma inteligente */
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.btn-detalle:hover { background: var(--color-principal-hover); }
+.btn-detalle:active { transform: scale(0.98); }
+
+/* ── COMPONENTE: FORMULARIO DE RECLAMOS ─────── */
 .formulario {
     width: 100%;
     max-width: 500px;
@@ -417,7 +364,6 @@ h2, h1 {
     padding: 20px;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.3);
     position: relative;
-    font-family: Arial, sans-serif;
     background: #ffffff;
     border-radius: 8px;
     border: 1px solid #ddd;
@@ -450,7 +396,6 @@ h2, h1 {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-family: Arial, sans-serif;
 }
 
 .formulario_submit {
@@ -463,40 +408,62 @@ h2, h1 {
     transition: background 0.3s;
 }
 
-.formulario_submit:hover {
-    background: #0b4800;
+.formulario_submit:hover { background: #0b4800; }
+
+/* ── COMPONENTE: PIE DE PÁGINA (FOOTER) ─────── */
+.pie {
+    background: linear-gradient(#200000, #bd0000);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.pie h5 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.cajas_red {
+    display: flex;
+    gap: 20px;
 }
 
 .Redes_Sociales {
     color: rgb(255, 255, 255);
     text-decoration: none;
-    display: inline-block;
-    width: fit-content;
+    font-size: 1.5rem;
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.cajas_red {
-    display: flex;
-    flex-direction: row;
-    text-align: left;
-    gap: 10px;
+.Redes_Sociales:hover {
+    color: var(--color-hover-dorado);
+    transform: scale(1.2);
+}
+
+.pie h6 {
+    margin: 5px 0 0 0;
+    font-size: 0.95rem;
+    color: var(--color-texto-claro);
+    letter-spacing: 0.03em;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-.titulo-principal {
-    margin-top: 30px;
-    margin-bottom: 25px;
-}
-
-/* ── MEDIA QUERIES ── */
+/* ── MEDIA QUERIES RESPONSIVAS ── */
 @media (max-width: 850px) {
     .nosotros-layout {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
     .nosotros-video-wrapper iframe {
         height: 240px;
     }
@@ -507,7 +474,6 @@ html {
         flex-direction: column;
         align-items: stretch;
     }
-
     .nav-enlace {
         justify-content: center;
         border-bottom: 1px solid #1a0000;
