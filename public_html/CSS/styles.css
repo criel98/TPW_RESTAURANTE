@@ -130,7 +130,6 @@ nav {
     text-align: center;
 }
 
-/* Fondos degradados premium para las promociones */
 .promo-1 {
     background: linear-gradient(135deg, #bd0000 0%, #3a0000 100%);
 }
@@ -156,7 +155,6 @@ nav {
     color: #ffffffd0;
 }
 
-/* Animación fluida para el movimiento infinito */
 @keyframes mover {
     0%, 28% { transform: translateX(0%); }
     33%, 61% { transform: translateX(-33.33%); }
@@ -233,43 +231,99 @@ h2, h1 {
     font-size: 1.2rem;
 }
 
+/* ── CORRECCIÓN SECCIÓN EXPERIENCIA ─────── */
 .contenedor {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 30px;
     flex-wrap: wrap;
+    padding: 20px 0;
 }
 
 .card {
     background: white;
-    width: 250px;
-    margin: 15px;
-    padding: 15px;
-    border-radius: 15px;
+    width: 280px;
+    padding: 20px;
+    border-radius: 12px;
     text-align: center;
-    transition: background 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, background 0.2s ease;
 }
 
 .card:hover {
     background: #FFE0B2;
+    transform: translateY(-5px);
 }
 
+/* Forzamos alto idéntico en las imágenes sin deformarlas */
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-family: "Adamina", serif;
+    font-size: 0.95rem;
+    margin: 10px 0 0 0;
+    color: #333;
+}
+
+/* ── CORRECCIÓN PIE DE PÁGINA (FOOTER) ─────── */
 .pie {
     background: linear-gradient(#200000, #bd0000);
     color: white;
     text-align: center;
-    padding: 15px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 }
 
 .pie h5 {
-    text-align: left;
+    text-align: center;
     color: #ffffff;
+    font-size: 1.1rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
+.cajas_red {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.Redes_Sociales {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.Redes_Sociales:hover {
+    color: #FFE0B2;
+    transform: scale(1.2);
+}
+
+.pie h6 {
+    margin: 5px 0 0 0;
+    font-size: 0.95rem;
+    color: #f5d9bc;
+    letter-spacing: 0.03em;
+}
+
+/* PRODUCTOS DETALLES */
 .descripcion {
     color: #424242;
     text-align: center;
-    min-height: 80px;
-    margin-bottom: 10px;
+    min-height: 55px;
+    margin-bottom: 5px;
     margin-top: 5px;
     font-size: 0.9rem;
 }
@@ -297,9 +351,10 @@ h2, h1 {
 }
 
 .img {
-    width: 55%;
+    width: 60%;
+    max-height: 140px;
     object-fit: contain;
-    margin: 10px auto;
+    margin: 0 auto;
     display: block;
 }
 
