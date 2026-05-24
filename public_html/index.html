@@ -1,163 +1,270 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
-    <head>
-        <title>El Buen Sabor</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="CSS/styles.css" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    </head>
+<head>
+    <title>El Buen Sabor</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="CSS/styles.css" rel="stylesheet" type="text/css" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <body class="PaginaRest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Adamina&family=Alex+Brush&family=Arbutus+Slab&family=Berkshire+Swash&display=swap"
+        rel="stylesheet">
+</head>
 
-        <header class="banner">
-            <img src="imagenes/Logo/LOGO.png" alt="" class="logo"/>
-            <h3>Donde cada plato cuenta una historia</h6>
-        </header>
+<body class="PaginaRest">
 
-        <nav>
-            <a href="#Productos" class="nav-enlace desaparece">Productos</a>
-            <a href="#Nosotros" class="nav-enlace desaparece">Nosotros</a>
-            <a href="#experiencia" class="nav-enlace desaparece">Experiencia</a>
-            <a href="reclamos.html" class="nav-enlace desaparece">Reclamos</a>
-        </nav>
+    <header class="banner">
+        <div class="banner-overlay"></div>
+        <div class="banner-llamas"></div>
+        <div class="banner-contenido">
+            <img src="imagenes/Logo/LOGO.png" alt="El Buen Sabor" class="logo" />
+            <p class="banner-slogan">Donde cada plato cuenta una historia</p>
+        </div>
+    </header>
 
-        <section id="Nosotros" class="bannervid">
-            <iframe 
-                src="https://www.youtube.com/embed/U0dW24WEgvE?autoplay=1&mute=1&controls=0&loop=1&playlist=U0dW24WEgvE"
-                frameborder="0"
-                allow="autoplay; encrypted-media"
-                allowfullscreen>
-            </iframe>
-        </section>
+    <nav>
+        <a href="#Nosotros" class="nav-enlace">
+            <i class="fa-solid fa-users"></i> Nosotros
+        </a>
+        <a href="#Productos" class="nav-enlace">
+            <i class="fa-solid fa-utensils"></i> Productos
+        </a>
+        <a href="#experiencia" class="nav-enlace">
+           <i class="fa-solid fa-star"></i> Experiencia
+        </a>
+        <a href="reclamos.html" class="nav-enlace">
+            <i class="fa-solid fa-comment-dots"></i> Reclamos
+        </a>
+    </nav>
 
+    <div class="containers">
+        <h2 class="subtitulo" style="text-align: center; margin-top: 30px;">🔥 Promociones Imperdibles</h2>
+        <div class="carrusel">
+            <div class="carrusel-contenido">
+                <div class="slide promo-1">
+                    <h3>¡Combo Universitario!</h3>
+                    <p>Hamburguesa Grande + Papa Personal + Gaseosa por solo S/ 35.00</p>
+                </div>
+                <div class="slide promo-2">
+                    <h3>Jueves de 2x1</h3>
+                    <p>En todas nuestras Hamburguesas Tejanas comprando desde la web.</p>
+                </div>
+                <div class="slide promo-3">
+                    <h3>¿Sabor Duplicado?</h3>
+                    <p>Agrégale un bloque extra de tocino crujiente a cualquier burger por S/ 3.00</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <section id="Nosotros" class="containers">
+        <h1 class="titulo-principal">Nosotros</h1>
 
-        <h1> Nuestros productos</h1>
+        <div class="nosotros-layout">
+            
+            <div class="nosotros-info">
+                <div class="info-block">
+                    <h2 class="titulo">¿Quiénes somos?</h2>
+                    <p class="parrafo">
+                        Somos <strong>El Buen Sabor</strong>, una hamburguesería con pasión por la cocina
+                        artesanal y el sabor auténtico. Nació con el sueño de ofrecer hamburguesas únicas,
+                        elaboradas con ingredientes frescos y seleccionados, para que cada visita sea una
+                        experiencia memorable.
+                    </p>
+                </div>
 
+                <div class="info-block">
+                    <h2 class="titulo">Misión y Visión</h2>
+                    <p class="parrafo">
+                        Nuestra <strong>Misión</strong> es preparar y ofrecer hamburguesas de alta calidad con sabores 
+                        auténticos, brindando una experiencia gastronómica única. Tenemos la <strong>Visión</strong> 
+                        de ser la hamburguesería más querida y reconocida, destacándonos por nuestra calidad y creatividad en cada receta.
+                    </p>
+                </div>
+            </div>
 
+            <div class="nosotros-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/U0dW24WEgvE?autoplay=1&mute=1&controls=0&loop=1&playlist=U0dW24WEgvE"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                </iframe>
+            </div>
 
-        <section id="Productos" class="container flex text-center">
+        </div>
+    </section>
 
-            <div class="columna">
+    <div id="Productos">
+        <h1 class="text-center">Nuestros productos</h1>
+
+        <div class="containers">
+            <h2 class="subtitulo">Sección Hamburguesas</h2>
+        </div>
+        
+        <section class="containers flex text-center">
+            <div class="product-card">
                 <h2>Hamburguesa Clásica</h2>
                 <hr>
                 <p class="descripcion">
-                    Hamburguesa 100% carne de res a la parrilla con lechuga, 
-                    tomate, cebolla, kétchup y mayonesa. 
-                </p> 
-                <img src="imagenes/Productos/Clasica.jpeg" alt="" class="img" />
+                    Hamburguesa 100% carne de res a la parrilla con lechuga, tomate, cebolla, kétchup y mayonesa.
+                </p>
+                <img src="imagenes/Productos/Clasica.jpeg" alt="Hamburguesa Clásica" class="img" />
                 <h3 class="precio">S/ 20.00</h3>
                 <a href="#" class="btn-detalle">Ver detalle</a>
             </div>
 
-
-            <div class="columna">
+            <div class="product-card">
                 <h2>Hamburguesa grande</h2>
                 <hr>
                 <p class="descripcion">
-                    Hamburguesa 100% carne de res a la parrilla con tomate, 
-                    lechuga, mayonesa, kétchup, pepinillos y cebolla.
-                </p> 
-                <img src="imagenes/Productos/hamburguesa grande.jpeg" alt="" class="img" />
+                    Hamburguesa 100% carne de res a la parrilla con tomate, lechuga, mayonesa, kétchup, pepinillos y cebolla.
+                </p>
+                <img src="imagenes/Productos/hamburguesa grande.jpeg" alt="Hamburguesa grande" class="img" />
                 <h3 class="precio">S/ 30.00</h3>
                 <a href="#" class="btn-detalle">Ver detalle</a>
             </div>
 
-
-            <div class="columna">
+            <div class="product-card">
                 <h2>Doble carne con Tocino</h2>
                 <hr>
                 <p class="descripcion">
-                    Doble hamburguesa 100% carne de res a la parrilla, queso y tocino. 
-                </p> 
-                <img src="imagenes/Productos/doble con queso.jpeg" alt="" class="img" />
+                    Doble hamburguesa 100% carne de res a la parrilla, queso y tocino.
+                </p>
+                <img src="imagenes/Productos/doble con queso.jpeg" alt="Doble carne con Tocino" class="img" />
                 <h3 class="precio">S/ 28.00</h3>
                 <a href="#" class="btn-detalle">Ver detalle</a>
-                <br><br>
             </div>
 
-
-            <div class="columna">
+            <div class="product-card">
                 <h2>Hamburguesa tejana</h2>
                 <hr>
                 <p class="descripcion">
-                    Hamburguesa 100% carne de res a la parrilla con queso, 
-                    tocino, tomate, lechuga, mayonesa, BBQ, pepinillos y cebolla.
-                </p> 
-                <img src="imagenes/Productos/Tejana.jpeg" alt="" class="img" />
+                    Hamburguesa 100% carne de res a la parrilla con queso, tocino, tomate, lechuga, mayonesa, BBQ, pepinillos y cebolla.
+                </p>
+                <img src="imagenes/Productos/Tejana.jpeg" alt="Hamburguesa tejana" class="img" />
                 <h3 class="precio">S/ 22.00</h3>
                 <a href="#" class="btn-detalle">Ver detalle</a>
-                <br><br>
             </div>
 
-
-            <div class="columna">
+            <div class="product-card">
                 <h2>Doble con queso</h2>
                 <hr>
                 <p class="descripcion">
-                    Doble hamburguesa 100% carne de res a la parrilla con queso,
-                    pepinillos, mostaza y kétchup.
-                </p> 
-                <img src="imagenes/Productos/doble con queso.jpeg" alt="" class="img" />
+                    Doble hamburguesa 100% carne de res a la parrilla con queso, pepinillos, mostaza y kétchup.
+                </p>
+                <img src="imagenes/Productos/doble con queso.jpeg" alt="Doble con queso" class="img" />
                 <h3 class="precio">S/ 30.00</h3>
                 <a href="#" class="btn-detalle">Ver detalle</a>
-                <br><br>
+            </div>
+        </section>
+
+        <div class="containers">
+            <h2 class="subtitulo">Sección Complementos</h2>
+        </div>
+        
+        <section class="containers flex text-center">
+            <div class="product-card">
+                <h2>Papa Familiar</h2>
+                <hr>
+                <p class="descripcion">
+                    Papas fritas doradas y crujientes para compartir.
+                </p>
+                <img src="imagenes/Complementos/papa familiar.jpg" alt="Papa Familiar" class="img" />
+                <h3 class="precio">S/ 10.00</h3>
+                <a href="#" class="btn-detalle">Ver detalle</a>
             </div>
 
+            <div class="product-card">
+                <h2>Papa Personal</h2>
+                <hr>
+                <p class="descripcion">
+                    Papas fritas doradas crujientes.
+                </p>
+                <img src="imagenes/Complementos/Papapersonal.jpg" alt="Papa Personal" class="img" />
+                <h3 class="precio">S/ 5.00</h3>
+                <a href="#" class="btn-detalle">Ver detalle</a>
+            </div>
 
-            <div class="columna">
+            <div class="product-card">
+                <h2>Coca Cola 1L</h2>
+                <hr>
+                <p class="descripcion">
+                    1 Coca Cola mediana 1L.
+                </p>
+                <img src="imagenes/Complementos/coca-cola.jpg" alt="Coca Cola 1L" class="img" />
+                <h3 class="precio">S/ 8.00</h3>
+                <a href="#" class="btn-detalle">Ver detalle</a>
+            </div>
+
+            <div class="product-card">
+                <h2>Inka Cola 1L</h2>
+                <hr>
+                <p class="descripcion">
+                    1 Inka Cola mediana 1L.
+                </p>
+                <img src="imagenes/Complementos/iinkakola.jpg" alt="Inka Cola 1L" class="img" />
+                <h3 class="precio">S/ 8.00</h3>
+                <a href="#" class="btn-detalle">Ver detalle</a>
+            </div>
+
+            <div class="product-card">
                 <h2>Nuggets</h2>
                 <hr>
                 <p class="descripcion">
-                    10 nuggets de pollo dorados y crujientes, perfectos para compartir
-                </p> 
-                <img src="imagenes/Productos/nugets.jpeg" alt="" class="img" />
-                <h3 class="precio">S/ 16.00</h3>
+                    5 nuggets de pollo dorados y crujientes, perfectos para compartir.
+                </p>
+                <img src="imagenes/Complementos/nugets.jpeg" alt="Nuggets" class="img" />
+                <h3 class="precio">S/ 10.00</h3>
                 <a href="#" class="btn-detalle">Ver detalle</a>
-                <br><br>
-            </div>
-
-        </section> 
-
-
-        <section id="experiencia">
-            <h2>⭐ Experiencia</h2>
-
-            <div class="contenedor">
-                <div class="card">
-                    <h3>Ambiente</h3>
-                    <img src="imagenes/Detalles/local.jpg" width="100%">
-                    <p>Un lugar cómodo y acogedor</p>
-                </div>
-
-                <div class="card">
-                    <h3>Calidad</h3>
-                    <img src="imagenes/Detalles/calidad.jpg" width="100%">
-                    <p>Ingredientes frescos siempre</p>
-                </div>
-
-                <div class="card">
-                    <h3>Servicio</h3>
-                    <img src="imagenes/Detalles/servicio.jpg" width="100%">
-                    <p>Atención rápida y amable</p>
-                </div>
             </div>
         </section>
-       </body>
-       <footer class="pie">
-            <h4>📍 Lima - Perú | 📞 999 999 999</h4>
-            <div >
-            <a href="https://www.facebook.com/" class="redes_s" target="_blank">
+    </div>
+
+    <section id="experiencia">
+        <h2>⭐ Experiencia</h2>
+        <div class="contenedor">
+            <div class="card">
+                <h3>Ambiente</h3>
+                <img src="imagenes/Detalles/local.jpg" alt="Ambiente" width="100%">
+                <p>Un lugar cómodo y acogedor</p>
+            </div>
+
+            <div class="card">
+                <h3>Calidad</h3>
+                <img src="imagenes/Detalles/calidad.jpg" alt="Calidad" width="100%">
+                <p>Ingredientes frescos siempre</p>
+            </div>
+
+            <div class="card">
+                <h3>Servicio</h3>
+                <img src="imagenes/Detalles/servicio.jpg" alt="Servicio" width="100%">
+                <p>Atención rápida y amable</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="pie">
+        <h5>Síguenos en</h5>
+        <div class="cajas_red">
+            <a href="https://www.instagram.com/" class="Redes_Sociales" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/" class="Redes_Sociales" target="_blank">
                 <i class="fa-brands fa-facebook"></i>
             </a>
-            <a href="https://www.whatsapp.com/" class="redes_s" target="_blank">
+            <a href="https://www.whatsapp.com/?lang=es" class="Redes_Sociales" target="_blank">
                 <i class="fa-brands fa-whatsapp"></i>
             </a>
-            <a href="https://www.tiktok.com/" class="redes_s" target="_blank">
+            <a href="https://www.tiktok.com/?lang=es" class="Redes_Sociales" target="_blank">
                 <i class="fa-brands fa-tiktok"></i>
             </a>
         </div>
-        </footer>
+        <h6>📍 Lima - Perú | 📞 999 999 999</h6>
+    </footer>
+
+</body>
 </html>
