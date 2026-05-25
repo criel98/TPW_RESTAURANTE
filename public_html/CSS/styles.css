@@ -1,26 +1,42 @@
-/* ── VARIABLES GLOBALES (Configuración de Marca) ── */
-:root {
-    --color-principal: rgb(179, 0, 0);
-    --color-principal-hover: rgb(140, 0, 0);
-    --color-fondo-crema: #e9e0d2;
-    --color-fondo-oscuro: #0d0000;
-    --color-hover-dorado: #FFE0B2;
-    --color-texto-claro: #f5d9bc;
-    --fuente-principal: Arial, sans-serif;
-    --fuente-titulos: "Adamina", serif;
-}
-
-/* ── CONFIGURACIÓN BASE ── */
+/* ==========================================================================
+   ── ESTILOS GENERALES Y ESTRUCTURA BASE ──
+   ========================================================================== */
 .PaginaRest {
     margin: 0;
-    font-family: var(--fuente-principal);
-    background: var(--color-fondo-crema);
+    font-family: Arial, sans-serif;
+    background: #e9e0d2;
 }
 
-/* ── BANNER PRINCIPAL ─────── */
+html {
+    scroll-behavior: smooth;
+}
+
+.containers {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+h2, h1 {
+    text-align: center;
+    color: #000000;
+    margin: 10px;
+}
+
+.titulo-principal {
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+
+/* ==========================================================================
+   ── BANNER PRINCIPAL ──
+   ========================================================================== */
 .banner {
     position: relative;
-    background: var(--color-fondo-oscuro);
+    background: #0d0000;
     text-align: center;
     padding: 0;
     overflow: hidden;
@@ -75,13 +91,15 @@
 .banner-slogan {
     font-family: "Berkshire Swash", serif;
     font-size: 1.2rem;
-    color: var(--color-texto-claro);
+    color: #f5d9bc;
     margin: 0;
     letter-spacing: 0.04em;
     text-shadow: 0 2px 12px #00000088;
 }
 
-/* ── MENU DE NAVEGACIÓN ─────── */
+/* ==========================================================================
+   ── NAVEGACIÓN (NAV) ──
+   ========================================================================== */
 nav {
     display: flex;
     justify-content: center;
@@ -99,7 +117,7 @@ nav {
     padding: 14px 24px;
     text-decoration: none;
     font-size: 0.88rem;
-    font-family: var(--fuente-titulos);
+    font-family: "Adamina", serif;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     transition: color 0.25s, background 0.25s;
@@ -113,14 +131,16 @@ nav {
     color: #ffffff;
 }
 
-/* ── SECCIÓN: CARRUSEL DE PROMOCIONES ─────── */
+/* ==========================================================================
+   ── CARRUSEL DE PROMOCIONES ──
+   ========================================================================== */
 .carrusel {
     width: 100%;
     max-width: 900px;
     margin: 15px auto 35px auto;
     overflow: hidden;
     border-radius: 15px;
-    background: var(--color-fondo-oscuro);
+    background: #0d0000;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
@@ -143,14 +163,20 @@ nav {
     text-align: center;
 }
 
-.promo-1 { background: linear-gradient(135deg, #bd0000 0%, #3a0000 100%); }
-.promo-2 { background: linear-gradient(135deg, #2a0000 0%, #a10505 100%); }
-.promo-3 { background: linear-gradient(135deg, #8c0000 0%, #150000 100%); }
+.promo-1 {
+    background: linear-gradient(135deg, #bd0000 0%, #3a0000 100%);
+}
+.promo-2 {
+    background: linear-gradient(135deg, #2a0000 0%, #a10505 100%);
+}
+.promo-3 {
+    background: linear-gradient(135deg, #8c0000 0%, #150000 100%);
+}
 
 .slide h3 {
-    font-family: var(--fuente-titulos);
+    font-family: "Adamina", serif;
     font-size: 1.6rem;
-    color: var(--color-texto-claro);
+    color: #f5d9bc;
     margin: 0 0 8px 0;
     text-transform: uppercase;
     letter-spacing: 0.03em;
@@ -163,13 +189,23 @@ nav {
 }
 
 @keyframes mover {
-    0%, 28% { transform: translateX(0%); }
-    33%, 61% { transform: translateX(-33.33%); }
-    66%, 94% { transform: translateX(-66.66%); }
-    100% { transform: translateX(0%); }
+    0%, 28% {
+        transform: translateX(0%);
+    }
+    33%, 61% {
+        transform: translateX(-33.33%);
+    }
+    66%, 94% {
+        transform: translateX(-66.66%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
 }
 
-/* ── SECCIÓN: NOSOTROS (GRID LAYOUT) ────── */
+/* ==========================================================================
+   ── SECCIÓN NOSOTROS (DOS COLUMNAS) ──
+   ========================================================================== */
 .nosotros-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -198,9 +234,8 @@ nav {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* ── TEXTOS Y ESTRUCTURAS GENERALES ── */
 .titulo {
-    font-family: var(--fuente-titulos);
+    font-family: "Adamina", serif;
     font-size: 1.3rem;
     color: #4d0000;
     margin: 10px 0 10px;
@@ -209,8 +244,18 @@ nav {
     text-transform: uppercase;
 }
 
+.subtitulo {
+    text-align: left;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    font-family: "Adamina", serif;
+    color: #4d0000;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
 .parrafo {
-    font-family: var(--fuente-titulos);
+    font-family: "Adamina", serif;
     font-size: 0.95rem;
     line-height: 1.8;
     color: #000;
@@ -222,72 +267,9 @@ nav {
     color: #a10505;
 }
 
-h2, h1 {
-    text-align: center;
-    color: #000000;
-    margin: 10px;
-}
-
-.subtitulo {
-    text-align: left;
-    margin-top: 40px;
-    margin-bottom: 15px;
-    font-family: var(--fuente-titulos);
-    color: #4d0000;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-}
-
-.containers {
-    margin: 0 auto;
-    width: 90%;
-}
-
-.titulo-principal {
-    margin-top: 30px;
-    margin-bottom: 25px;
-}
-
-/* ── SECCIÓN: EXPERIENCIA ─────── */
-.contenedor {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    padding: 20px 0;
-}
-
-.card {
-    background: white;
-    width: 280px;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, background 0.2s ease;
-}
-
-.card:hover {
-    background: var(--color-hover-dorado);
-    transform: translateY(-5px);
-}
-
-.card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.card p {
-    font-family: var(--fuente-titulos);
-    font-size: 0.95rem;
-    margin: 10px 0 0 0;
-    color: #333;
-}
-
-/* ── FILA GRID DE TARJETAS DE PRODUCTO ── */
+/* ==========================================================================
+   ── SECCIÓN CATÁLOGO DE PRODUCTOS ──
+   ========================================================================== */
 .flex {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -296,11 +278,6 @@ h2, h1 {
     align-items: stretch;
 }
 
-.text-center {
-    text-align: center;
-}
-
-/* ── COMPONENTES: TARJETAS DE PRODUCTO ─────── */
 .product-card {
     background: #E5E1E1;
     color: #1e1e1e;
@@ -318,16 +295,21 @@ h2, h1 {
 .descripcion {
     color: #424242;
     text-align: center;
-    min-height: 55px;
-    margin: 5px 0 5px 0;
+    min-height: 80px;
+    margin-bottom: 10px;
+    margin-top: 5px;
     font-size: 0.9rem;
 }
 
+.img_productos {
+    max-width: 100%;
+    height: auto;
+}
+
 .img {
-    width: 60%;
-    max-height: 140px;
+    width: 55%;
     object-fit: contain;
-    margin: 0 auto;
+    margin: 10px auto;
     display: block;
 }
 
@@ -339,24 +321,153 @@ h2, h1 {
 }
 
 .btn-detalle {
-    background: var(--color-principal);
+    background: rgb(179, 0, 0);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 12px 0px; 
+    padding: 12px 0px;
     color: #fff;
     text-decoration: none;
     border-radius: 8px;
     width: 90%;
-    margin: auto auto 5px auto; /* Combina márgenes de forma inteligente */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: 5px;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.1s ease;
 }
 
-.btn-detalle:hover { background: var(--color-principal-hover); }
-.btn-detalle:active { transform: scale(0.98); }
+.btn-detalle:hover {
+    background: rgb(140, 0, 0);
+}
 
-/* ── COMPONENTE: FORMULARIO DE RECLAMOS ─────── */
+.btn-detalle:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   ── SECCIÓN EXPERIENCIA ──
+   ========================================================================== */
+.contenedor {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    width: 250px;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    transition: background 0.2s ease;
+}
+
+.card:hover {
+    background: #FFE0B2;
+}
+
+/* ==========================================================================
+   ── DETALLE INTERNO DE HAMBURGUESAS ──
+   ========================================================================== */
+.detalle-producto {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.detalle-imagen {
+    width: 300px;
+    max-width: 90%;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.detalle-titulo {
+    font-family: "Adamina", serif;
+    color: #4d0000;
+    margin-top: 25px;
+}
+
+.detalle-descripcion {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.nutricion-resumen {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.nutri-box {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nutri-box h3 {
+    color: #bd0000;
+    margin: 0;
+}
+
+.nutri-box p {
+    margin-top: 8px;
+    font-size: 0.9rem;
+}
+
+.table_container {
+    margin: 30px auto;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tabla-nutricional {
+    width: 100%;
+    background: white;
+    border-collapse: collapse;
+}
+
+.tabla-nutricional th,
+.tabla-nutricional td {
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+.tabla-nutricional thead {
+    background: #bd0000;
+    color: white;
+}
+
+.tabla-nutricional tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+.tabla-nutricional tr:hover {
+    background: #ffe0b2;
+}
+
+.alergenos {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 30px 0;
+    text-align: left;
+}
+
+.alergenos h2 {
+    text-align: left;
+    color: #4d0000;
+}
+
+/* ==========================================================================
+   ── SECCIÓN FORMULARIO / RECLAMOS ──
+   ========================================================================== */
 .formulario {
     width: 100%;
     max-width: 500px;
@@ -364,6 +475,7 @@ h2, h1 {
     padding: 20px;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.3);
     position: relative;
+    font-family: Arial, sans-serif;
     background: #ffffff;
     border-radius: 8px;
     border: 1px solid #ddd;
@@ -396,6 +508,7 @@ h2, h1 {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-family: Arial, sans-serif;
 }
 
 .formulario_submit {
@@ -408,75 +521,249 @@ h2, h1 {
     transition: background 0.3s;
 }
 
-.formulario_submit:hover { background: #0b4800; }
+.formulario_submit:hover {
+    background: #0b4800;
+}
 
-/* ── COMPONENTE: PIE DE PÁGINA (FOOTER) ─────── */
+/* ==========================================================================
+   ── SECCIÓN FOOTER ULTRA DELGADO (UNA SOLA LÍNEA CORREGIDO) ──
+   ========================================================================== */
 .pie {
     background: linear-gradient(#200000, #bd0000);
     color: white;
-    text-align: center;
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    padding: 18px 20px 10px 20px;
+    font-family: Arial, sans-serif;
+    border-top: 3px solid #ffaa00;
 }
 
 .pie h5 {
+    text-align: left;
     color: #ffffff;
-    font-size: 1.1rem;
-    margin: 0;
+    font-family: "Adamina", serif;
+    font-size: 0.95rem;
+    margin: 0 0 12px 0;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 4px;
+    min-height: 32px;
+    display: flex;
+    align-items: flex-end;
+}
+
+/* FIJADO: Regla global para separar el icono de reloj en cualquier pantalla */
+.pie h5 i {
+    margin-right: 5px 
+   }
+
+.footer-contenido {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-izquierda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-footer {
+    width: 130px;
+    height: auto;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+}
+
+.footer-derecha {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.footer-item, .horarios, .redes-container, .libro-reclamaciones-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.footer-derecha p {
+    margin: 0 0 6px 0;
+    font-size: 0.85rem;
+    color: #f5d9bc;
+    line-height: 1.4;
+}
+
+.footer-derecha p i {
+    margin-right: 3px;
+    color: #ffaa00;
 }
 
 .cajas_red {
     display: flex;
-    gap: 20px;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 2px;
 }
 
 .Redes_Sociales {
     color: rgb(255, 255, 255);
     text-decoration: none;
-    font-size: 1.5rem;
-    transition: transform 0.2s ease, color 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .Redes_Sociales:hover {
-    color: var(--color-hover-dorado);
-    transform: scale(1.2);
+    background: #ffaa00;
+    color: #000;
+    transform: translateY(-3px);
 }
 
-.pie h6 {
-    margin: 5px 0 0 0;
-    font-size: 0.95rem;
-    color: var(--color-texto-claro);
-    letter-spacing: 0.03em;
+/* FIJADO: Control para que las imágenes de pago independientes se organicen en bloque flex ordenado */
+.footer-item {
+    display: flex;
+    flex-direction: column;
 }
 
-html {
-    scroll-behavior: smooth;
+.footer-item img {
+    max-width: 100%;
+    width: 180px; /* Tamaño comercial perfecto para iconos de tarjetas individuales */
+    height: auto;
+    object-fit: contain;
+    margin-top: 5px;
+    display: inline-block;
 }
 
-/* ── MEDIA QUERIES RESPONSIVAS ── */
+/* Si tienes un contenedor HTML para tus tarjetas dentro de footer-item */
+.footer-item div, .footer-item p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.libro-enlace img {
+    max-width: 100%;
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    margin-top: 2px;
+    transition: transform 0.3s ease;
+}
+
+.libro-enlace img:hover {
+    transform: scale(1.05);
+}
+
+.footer-bottom {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.footer-bottom h6 {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #e8c8a8;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+}
+
+/* ── BOTÓN FLOTANTE VOLVER ARRIBA ── */
+.btn-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #bd0000;
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    z-index: 200;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-top:hover {
+    background: #ff4400;
+    transform: scale(1.08);
+}
+
+/* ==========================================================================
+   ── MEDIA QUERIES (RESPONSIVE DESIGN) ──
+   ========================================================================== */
+@media (min-width: 950px) {
+    .footer-contenido {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-izquierda {
+        width: 5%;
+        justify-content: flex-start;
+    }
+
+    .footer-derecha {
+        width: 90%;
+    }
+}
+
 @media (max-width: 850px) {
     .nosotros-layout {
         grid-template-columns: 1fr;
         gap: 20px;
     }
+
     .nosotros-video-wrapper iframe {
         height: 240px;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     nav {
         flex-direction: column;
         align-items: stretch;
     }
+
     .nav-enlace {
         justify-content: center;
         border-bottom: 1px solid #1a0000;
         padding: 12px;
+    }
+
+    .footer-derecha {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .pie h5 {
+        text-align: center;
+        width: 100%;
+        min-height: auto;
+        justify-content: center;
+    }
+
+    .footer-item, .horarios, .redes-container, .libro-reclamaciones-col {
+        align-items: center;
+        text-align: center;
+    }
+
+    .cajas_red {
+        justify-content: center;
     }
 }
