@@ -251,16 +251,12 @@ function finalizarCompra() {
     });
     
     mensaje += "─".repeat(30) + "\n";
-    mensaje += `💰 *TOTAL: S/ ${total.toFixed(2)}*\n\n`;
+    mensaje += `*TOTAL: S/ ${total.toFixed(2)}*\n\n`;
     mensaje += "═".repeat(30) + "\n\n";
-    mensaje += "📍 *DATOS DEL CLIENTE:*\n";
-    mensaje += "Nombre: [Ingresa tu nombre]\n";
-    mensaje += "Dirección: [Ingresa tu dirección]\n";
-    mensaje += "Teléfono: [Ingresa tu teléfono]\n";
-    mensaje += "Referencia: [Ingresa alguna referencia]\n\n";
-    mensaje += "⏱️ Tiempo estimado de entrega: 45-60 min\n";
-    mensaje += "💵 Forma de pago: Efectivo/Yape/Plin\n\n";
-    mensaje += "¡Gracias por tu pedido! 🙏";
+    mensaje += "*DATOS DEL CLIENTE:*\n";
+    mensaje += "Tiempo estimado de entrega: 45-60 min\n";
+    mensaje += "Forma de pago: Efectivo/Yape/Plin\n\n";
+    mensaje += "¡Gracias por tu pedido! ";
     
     const numeroWhatsApp = "51951403223";
     const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
