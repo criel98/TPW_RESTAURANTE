@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title id="pageTitle">Detalle - El Buen Sabor</title>
+        <link rel="icon" type="image/png" href="../imagenes/Logo/favicon-logo.png">
+        <link href="../CSS/styles.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Adamina&family=Alex+Brush&family=Arbutus+Slab&family=Berkshire+Swash&display=swap"
+            rel="stylesheet">
+    </head>
+
+    <body class="PaginaRest detalle-page">
+
+        <!-- ========================================
+             NAVEGACIÓN (NAV) 
+        ======================================== -->
+        <nav>
+            <div class="nav-logo">
+                <img src="../imagenes/Logo/LOGO.png" alt="El Buen Sabor">
+                <span>El Buen Sabor</span>
+            </div>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="../index.html" class="nav-enlace"><i class="fa-solid fa-house"></i> Inicio</a>
+                <a href="../index.html#Nosotros" class="nav-enlace"><i class="fa-solid fa-users"></i> Nosotros</a>
+                <a href="../index.html#Productos" class="nav-enlace"><i class="fa-solid fa-utensils"></i> Productos</a>
+                <a href="../index.html#experiencia" class="nav-enlace"><i class="fa-solid fa-star"></i> Experiencia</a>
+            </div>
+
+            <!-- CARRITO -->
+            <a href="carrito.html" class="nav-carrito">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="contadorCarrito">0</span>
+            </a>
+
+            <a href="#" class="nav-login" id="btnLogin">
+                <i class="fa-solid fa-user"></i> Iniciar Sesión
+            </a>
+
+            <button class="nav-boton" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i> Menú
+            </button>
+        </nav>
+
+        <!-- ===== DETALLE DEL PRODUCTO ===== -->
+        <section class="detalle-producto containers" id="detalleProducto">
+            <!-- El contenido se genera dinámicamente con JavaScript -->
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="pie">
+            <div class="footer-contenido">
+                <div class="footer-izquierda">
+                    <img src="../imagenes/Logo/LOGO.png" alt="Logo" class="logo-footer">
+                </div>
+                <div class="footer-derecha">
+                    <div class="redes-container">
+                        <h5>Síguenos en</h5>
+                        <div class="cajas_red">
+                            <a href="#" class="Redes_Sociales"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="Redes_Sociales"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#" class="Redes_Sociales"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="#" class="Redes_Sociales"><i class="fa-brands fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                    <div class="horarios">
+                        <h5><i class="far fa-clock"></i> Horarios</h5>
+                        <p>Lun - Jue: 12pm - 11pm</p>
+                        <p>Vie - Dom: 12pm - 12am</p>
+                    </div>
+                    <div class="footer-item">
+                        <h5>Métodos de Pago</h5>
+                        <img src="../imagenes/Footer/metodos-pago.png" alt="Métodos de pago">
+                    </div>
+                    <div class="footer-item">
+                        <h5>Contacto</h5>
+                        <p><i class="fas fa-phone"></i> 999 999 999</p>
+                        <p><i class="fab fa-whatsapp"></i> 999 999 999</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Av. Carlos Izaguirre 123, Lima</p>
+                    </div>
+                    <div class="footer-item libro-reclamaciones-col">
+                        <h5>Libro de Reclamaciones</h5>
+                        <a href="../reclamos.html" class="libro-enlace">
+                            <img src="../imagenes/Footer/libro-reclamaciones.png" alt="Libro de Reclamaciones">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <h6>📍 Lima - Perú | © 2024 El Buen Sabor - Todos los derechos reservados</h6>
+            </div>
+        </footer>
+
+        <!-- ===== SCRIPTS ===== -->
+        <script src="../js/script.js"></script>
+        <script>
+                // ============================================
+                // GENERAR DETALLE DEL PRODUCTO
+                // ============================================
+                document.addEventListener('DOMContentLoaded', function () {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const productoId = parseInt(urlParams.get('id'));
+
+                    if (typeof productos === 'undefined') {
+                        document.getElementById('detalleProducto').innerHTML = `
+                        <h1>Error</h1>
+                        <p>No se pudo cargar la información de productos.</p>
+                        <a href="../index.html#Productos" class="btn-detalle">← Volver al catálogo</a>
+                    `;
+                        return;
+                    }
+
+                    const producto = productos.find(p => p.id === productoId);
+
+                    if (!producto) {
+                        document.getElementById('detalleProducto').innerHTML = `
+                        <h1>Producto no encontrado</h1>
+                        <p>Lo sentimos, el producto que buscas no existe.</p>
+                        <a href="../index.html#Productos" class="btn-detalle">← Volver al catálogo</a>
+                    `;
+                        return;
+                    }
+
+                    document.getElementById('pageTitle').textContent = `${producto.nombre} - El Buen Sabor`;
+                    const container = document.getElementById('detalleProducto');
+
+                    function crearFilaTabla(nombre, valor, idr) {
+                        return `<tr><td>${nombre}</td><td>${valor}</td><td>${idr || '-'}</td></tr>`;
+                    }
+
+                    const n = producto.nutricion;
+                    const idr = n.idr || {};
+
+                    container.innerHTML = `
+                    <img src="../${producto.imagen}" alt="${producto.nombre}" class="detalle-imagen">
+
+                    <a href="../index.html#Productos" class="btn-detalle">
+                        ← Volver al catálogo
+                    </a>
+
+                    <h1 class="detalle-titulo">${producto.nombre}</h1>
+
+                    <p class="detalle-descripcion">${producto.descripcion}</p>
+
+                    <h2 class="subtitulo">Información Nutricional Destacada</h2>
+
+                    <div class="nutricion-resumen">
+                        <div class="nutri-box"><h3>${n.calorias}</h3><p>Calorías (Kcal)</p></div>
+                        <div class="nutri-box"><h3>${n.grasas}</h3><p>Grasas</p></div>
+                        <div class="nutri-box"><h3>${n.carbohidratos}</h3><p>Carbohidratos</p></div>
+                        <div class="nutri-box"><h3>${n.proteinas}</h3><p>Proteínas</p></div>
+                        <div class="nutri-box"><h3>${n.sodio}</h3><p>Sodio</p></div>
+                    </div>
+
+                    <h2 class="subtitulo">Tabla Nutricional</h2>
+
+                    <div class="table_container">
+                        <table class="tabla-nutricional">
+                            <thead>
+                                <tr><th>Información Nutricional</th><th>Por Producto</th><th>I.D.R %</th></tr>
+                            </thead>
+                            <tbody>
+                                ${crearFilaTabla('Peso', n.peso)}
+                                ${crearFilaTabla('Calorías (Kcal)', n.calorias, idr.calorias)}
+                                ${crearFilaTabla('Azúcares Totales', n.azucares, idr.azucares)}
+                                ${crearFilaTabla('Grasas', n.grasas, idr.grasas)}
+                                ${crearFilaTabla('Carbohidratos Totales', n.carbohidratos, idr.carbohidratos)}
+                                ${crearFilaTabla('Proteínas', n.proteinas, idr.proteinas)}
+                                ${crearFilaTabla('Sodio', n.sodio, idr.sodio)}
+                                ${crearFilaTabla('Grasas Trans', n.grasasTrans)}
+                                ${crearFilaTabla('Grasas Saturadas', n.grasasSaturadas, idr.grasasSaturadas)}
+                                ${crearFilaTabla('Fibra', n.fibra, idr.fibra)}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="alergenos">
+                        <h2>Información sobre Alérgenos</h2>
+                        <p><strong>Este producto contiene:</strong></p>
+                        <ul>
+                            ${producto.alergenos.map(alergeno => `<li>${alergeno}</li>`).join('')}
+                        </ul>
+                    </div>
+
+                    <h3 class="precio">S/ ${producto.precio.toFixed(2)}</h3>
+                    <button onclick='window.location.href="configurar-producto.html?id=${producto.id}"'
+class="btn-agregar-carrito">
+🛒 Agregar al pedido
+</button>
+                `;
+                });
+        </script>
+
+        <script src="../js/carrito.js"></script>
+    </body>
+
+</html>
