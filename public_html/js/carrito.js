@@ -234,9 +234,9 @@ function finalizarCompra() {
     }
     
     // Crear mensaje detallado para WhatsApp
-    let mensaje = "🛒 *NUEVO PEDIDO - EL BUEN SABOR*\n";
+    let mensaje = "*NUEVO PEDIDO - EL BUEN SABOR*\n";
     mensaje += "═".repeat(30) + "\n\n";
-    mensaje += "📋 *DETALLE DEL PEDIDO:*\n\n";
+    mensaje += "*DETALLE DEL PEDIDO:*\n\n";
     
     carrito.forEach((producto, index) => {
         const nombre = producto.nombre || "Producto sin nombre";
