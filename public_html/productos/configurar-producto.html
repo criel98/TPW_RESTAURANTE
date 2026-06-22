@@ -1,169 +1,527 @@
 <!DOCTYPE html>
 <html lang="es">
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Personalizar - El Buen Sabor</title>
+    <link rel="icon" type="image/png" href="../imagenes/Logo/favicon-logo.png">
+    <link href="../CSS/styles.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Adamina&family=Alex+Brush&family=Arbutus+Slab&family=Berkshire+Swash&display=swap" rel="stylesheet">
     
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title id="pageTitle">Personalizar - El Buen Sabor</title>
-        <link rel="icon" type="image/png" href="../imagenes/Logo/favicon-logo.png">
-        <link href="../CSS/styles.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Adamina&family=Alex+Brush&family=Arbutus+Slab&family=Berkshire+Swash&display=swap"
-            rel="stylesheet">
-    </head>
+    <style>
+        .configuracion-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
 
-    <body class="PaginaRest">
+        .config-img {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
 
-        <nav>
-            <div class="nav-logo">
-                <img src="../imagenes/Logo/LOGO.png" alt="El Buen Sabor">
-                <span>El Buen Sabor</span>
+        .config-img img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .config-info {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            padding: 20px;
+        }
+
+        .config-info h1 {
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-family: 'Berkshire Swash', cursive;
+        }
+
+        .config-info .descripcion {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .config-info .precio-container {
+            background: #FFF5F0;
+            padding: 15px 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .config-info .precio-container h2 {
+            font-size: 2rem;
+            color: #FF6B35;
+            margin: 0;
+        }
+
+        .config-opciones {
+            grid-column: 1 / 3;
+            grid-row: 2 / 3;
+            padding: 20px;
+            background: #F8F9FA;
+            border-radius: 12px;
+            border: 1px solid #E9ECEF;
+        }
+
+        .config-opciones h3 {
+            color: #333;
+            font-size: 1.3rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #FF6B35;
+            padding-bottom: 8px;
+        }
+
+        .config-opciones h3:first-child {
+            margin-top: 0;
+        }
+
+        .config-opciones hr {
+            border: none;
+            border-top: 2px dashed #DEE2E6;
+            margin: 20px 0;
+        }
+
+        .config-opciones label {
+            display: inline-block;
+            margin: 8px 15px 8px 0;
+            padding: 8px 15px;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid #E9ECEF;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .config-opciones label:hover {
+            border-color: #FF6B35;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(255, 107, 53, 0.2);
+        }
+
+        .config-opciones input[type="radio"],
+        .config-opciones input[type="checkbox"] {
+            margin-right: 8px;
+            accent-color: #FF6B35;
+            transform: scale(1.1);
+        }
+
+        .cantidad-control {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .cantidad-control button {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #FF6B35;
+            background: white;
+            color: #FF6B35;
+            font-size: 1.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cantidad-control button:hover {
+            background: #FF6B35;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .cantidad-control .cantidad-numero {
+            font-size: 1.8rem;
+            font-weight: bold;
+            min-width: 40px;
+            text-align: center;
+            color: #333;
+        }
+
+        .config-acciones {
+            grid-column: 1 / 3;
+            grid-row: 3 / 4;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .config-acciones .btn-agregar-carrito {
+            padding: 15px 40px;
+            background: #FF6B35;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .config-acciones .btn-agregar-carrito:hover {
+            background: #e55a2b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        .config-acciones .btn-agregar-carrito:active {
+            transform: translateY(0);
+        }
+
+        .loading-config {
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .loading-config i {
+            font-size: 3rem;
+            color: #FF6B35;
+            animation: spin 1s linear infinite;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .producto-no-encontrado {
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .producto-no-encontrado h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .producto-no-encontrado p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        .producto-no-encontrado .btn-volver {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #FF6B35;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .producto-no-encontrado .btn-volver:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+        }
+
+        @media (max-width: 992px) {
+            .configuracion-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .config-img {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+            }
+
+            .config-img img {
+                height: 300px;
+            }
+
+            .config-info {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+                padding: 0;
+            }
+
+            .config-opciones {
+                grid-column: 1 / 2;
+                grid-row: 3 / 4;
+            }
+
+            .config-acciones {
+                grid-column: 1 / 2;
+                grid-row: 4 / 5;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .configuracion-grid {
+                padding: 15px;
+            }
+
+            .config-img img {
+                height: 200px;
+            }
+
+            .config-info h1 {
+                font-size: 1.6rem;
+            }
+
+            .config-opciones label {
+                display: block;
+                margin: 8px 0;
+            }
+
+            .cantidad-control button {
+                width: 35px;
+                height: 35px;
+                font-size: 1.2rem;
+            }
+
+            .config-acciones .btn-agregar-carrito {
+                width: 100%;
+                justify-content: center;
+                padding: 15px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body class="PaginaRest">
+
+    <!-- ===== NAVBAR ===== -->
+    <nav>
+        <div class="nav-logo">
+            <img src="../imagenes/Logo/LOGO.png" alt="El Buen Sabor">
+            <span>El Buen Sabor</span>
+        </div>
+
+        <div class="nav-menu" id="navMenu">
+            <a href="../index.html" class="nav-enlace"><i class="fa-solid fa-house"></i> Inicio</a>
+            <a href="../index.html#Nosotros" class="nav-enlace"><i class="fa-solid fa-users"></i> Nosotros</a>
+            <a href="../index.html#Productos" class="nav-enlace"><i class="fa-solid fa-utensils"></i> Productos</a>
+            <a href="../index.html#experiencia" class="nav-enlace"><i class="fa-solid fa-star"></i> Experiencia</a>
+        </div>
+
+        <!-- CARRITO -->
+        <a href="../carrito.html" class="nav-carrito">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="contadorCarrito">0</span>
+        </a>
+
+        <a href="#" class="nav-login" id="btnLogin">
+            <i class="fa-solid fa-user"></i> Iniciar Sesión
+        </a>
+
+        <button class="nav-boton" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i> Menú
+        </button>
+    </nav>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <section class="containers" style="min-height: 60vh;">
+
+        <div id="configuradorProducto">
+            <div class="loading-config" id="loadingConfig">
+                <i class="fas fa-utensils"></i>
+                <h3>Cargando producto...</h3>
+                <p style="color: #666;">Por favor espera un momento</p>
             </div>
+        </div>
 
-            <div class="nav-menu" id="navMenu">
-                <a href="../index.html" class="nav-enlace"><i class="fa-solid fa-house"></i> Inicio</a>
-                <a href="../index.html#Nosotros" class="nav-enlace"><i class="fa-solid fa-users"></i> Nosotros</a>
-                <a href="../index.html#Productos" class="nav-enlace"><i class="fa-solid fa-utensils"></i> Productos</a>
-                <a href="../index.html#experiencia" class="nav-enlace"><i class="fa-solid fa-star"></i> Experiencia</a>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="pie">
+        <div class="footer-contenido">
+            <div class="footer-izquierda">
+                <img src="../imagenes/Logo/LOGO.png" alt="Logo" class="logo-footer">
             </div>
+            <div class="footer-derecha">
+                <div class="redes-container">
+                    <h5>Síguenos en</h5>
+                    <div class="cajas_red">
+                        <a href="#" class="Redes_Sociales"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="Redes_Sociales"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="Redes_Sociales"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" class="Redes_Sociales"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="horarios">
+                    <h5><i class="far fa-clock"></i> Horarios</h5>
+                    <p>Lun - Jue: 12pm - 11pm</p>
+                    <p>Vie - Dom: 12pm - 12am</p>
+                </div>
+                <div class="footer-item">
+                    <h5>Métodos de Pago</h5>
+                    <img src="../imagenes/Footer/metodos-pago.png" alt="Métodos de pago">
+                </div>
+                <div class="footer-item">
+                    <h5>Contacto</h5>
+                    <p><i class="fas fa-phone"></i> 999 999 999</p>
+                    <p><i class="fab fa-whatsapp"></i> 999 999 999</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Carlos Izaguirre 123, Lima</p>
+                </div>
+                <div class="footer-item libro-reclamaciones-col">
+                    <h5>Libro de Reclamaciones</h5>
+                    <a href="../reclamos.html" class="libro-enlace">
+                        <img src="../imagenes/Footer/libro-reclamaciones.png" alt="Libro de Reclamaciones">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <h6>📍 Lima - Perú | © 2024 El Buen Sabor - Todos los derechos reservados</h6>
+        </div>
+    </footer>
 
-            <!-- CARRITO -->
-            <a href="carrito.html" class="nav-carrito">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span id="contadorCarrito">0</span>
-            </a>
+    <!-- ===== SCRIPTS ===== -->
+    <script src="../js/script.js"></script>
+    <script src="../js/carrito.js"></script>
 
-            <a href="#" class="nav-login" id="btnLogin">
-                <i class="fa-solid fa-user"></i> Iniciar Sesión
-            </a>
-
-            <button class="nav-boton" onclick="toggleMenu()">
-                <i class="fa-solid fa-bars"></i> Menú
-            </button>
-        </nav>
-
-        <section class="containers">
-
-            <div id="configuradorProducto"></div>
-
-        </section>
-
-        <script src="../js/script.js"></script>
-        <script src="../js/carrito.js"></script>
-
-
-        <script>
-
-                    const params = new URLSearchParams(window.location.search);
-
-                    const idProducto = parseInt(params.get("id"));
-
-                    const producto = productos.find(
-                            p => p.id === idProducto
-                    );
-
-                    const contenedor =
-                            document.getElementById("configuradorProducto");
-
-                    if (!producto) {
-
-                        contenedor.innerHTML = `
-                    <h2>Producto no encontrado</h2>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const contenedor = document.getElementById("configuradorProducto");
+            const loading = document.getElementById("loadingConfig");
+            
+            const params = new URLSearchParams(window.location.search);
+            const idProducto = parseInt(params.get("id"));
+            
+            if (!idProducto || isNaN(idProducto)) {
+                mostrarError(contenedor, loading, "ID de producto inválido");
+                return;
+            }
+            
+            if (typeof productos === 'undefined' || !Array.isArray(productos)) {
+                console.error("El array 'productos' no está definido");
+                mostrarError(contenedor, loading, "Error al cargar los productos");
+                return;
+            }
+            
+            const producto = productos.find(p => p.id === idProducto);
+            
+            if (!producto) {
+                mostrarError(contenedor, loading, "Producto no encontrado");
+                return;
+            }
+            
+            if (loading) loading.style.display = "none";
+            
+            renderizarProducto(contenedor, producto);
+            
+            if (typeof actualizarContadorCarrito === 'function') {
+                actualizarContadorCarrito();
+            }
+            
+            document.title = `${producto.nombre} - El Buen Sabor`;
+            const titleElement = document.getElementById("pageTitle");
+            if (titleElement) {
+                titleElement.textContent = `${producto.nombre} - Personalizar`;
+            }
+        });
+        
+        function mostrarError(contenedor, loading, mensaje) {
+            if (loading) loading.style.display = "none";
+            
+            if (contenedor) {
+                contenedor.innerHTML = `
+                    <div class="producto-no-encontrado">
+                        <i class="fa-solid fa-exclamation-triangle" style="font-size: 4rem; color: #FF6B35; margin-bottom: 20px;"></i>
+                        <h2>${mensaje}</h2>
+                        <p>El producto que buscas no está disponible o no existe.</p>
+                        <a href="../index.html#Productos" class="btn-volver">
+                            <i class="fa-solid fa-arrow-left"></i> Volver a productos
+                        </a>
+                    </div>
                 `;
-
-                    } else {
-
-                        contenedor.innerHTML = `
-
+            }
+        }
+        
+        function renderizarProducto(contenedor, producto) {
+            const nombre = producto.nombre || "Producto sin nombre";
+            const descripcion = producto.descripcion || "Sin descripción";
+            const precio = producto.precio || 0;
+            const imagen = producto.imagen ? `../${producto.imagen}` : "../imagenes/Logo/default-product.jpg";
+            
+            contenedor.innerHTML = `
                 <div class="configuracion-grid">
-
                     <div class="config-img">
-
-                        <img
-                            src="../${producto.imagen}"
-                            alt="${producto.nombre}">
-
+                        <img 
+                            src="${imagen}" 
+                            alt="${nombre}"
+                            onerror="this.src='../imagenes/Logo/default-product.jpg'"
+                        >
                     </div>
 
                     <div class="config-info">
-
-                        <h1>${producto.nombre}</h1>
-
-                        <p>
-                            ${producto.descripcion}
-                        </p>
-
-                        <h2>
-                            S/
-                            <span id="precioFinal">
-                                ${producto.precio.toFixed(2)}
-                            </span>
-        
-                        </h2>
-        
-        </div>
-        
-            <div class="config-opciones" id="configOpciones"></div>
-            <div class="config-acciones" id="configAcciones"></div>
-        
-        </div>
-
-                `;
-                        iniciarConfigurador(producto);
-
-                    }
-
-        </script>
-        
-        <br><br>
-        
-        <!-- ===== FOOTER ===== -->
-        <footer class="pie">
-            <div class="footer-contenido">
-                <div class="footer-izquierda">
-                    <img src="../imagenes/Logo/LOGO.png" alt="Logo" class="logo-footer">
-                </div>
-                <div class="footer-derecha">
-                    <div class="redes-container">
-                        <h5>Síguenos en</h5>
-                        <div class="cajas_red">
-                            <a href="#" class="Redes_Sociales"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#" class="Redes_Sociales"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="#" class="Redes_Sociales"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="#" class="Redes_Sociales"><i class="fa-brands fa-tiktok"></i></a>
+                        <h1>${nombre}</h1>
+                        <p class="descripcion">${descripcion}</p>
+                        <div class="precio-container">
+                            <h2>
+                                S/ <span id="precioFinal">${precio.toFixed(2)}</span>
+                            </h2>
                         </div>
                     </div>
-                    <div class="horarios">
-                        <h5><i class="far fa-clock"></i> Horarios</h5>
-                        <p>Lun - Jue: 12pm - 11pm</p>
-                        <p>Vie - Dom: 12pm - 12am</p>
+
+                    <div class="config-opciones" id="configOpciones">
                     </div>
-                    <div class="footer-item">
-                        <h5>Métodos de Pago</h5>
-                        <img src="../imagenes/Footer/metodos-pago.png" alt="Métodos de pago">
-                    </div>
-                    <div class="footer-item">
-                        <h5>Contacto</h5>
-                        <p><i class="fas fa-phone"></i> 999 999 999</p>
-                        <p><i class="fab fa-whatsapp"></i> 999 999 999</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Av. Carlos Izaguirre 123, Lima</p>
-                    </div>
-                    <div class="footer-item libro-reclamaciones-col">
-                        <h5>Libro de Reclamaciones</h5>
-                        <a href="../reclamos.html" class="libro-enlace">
-                            <img src="../imagenes/Footer/libro-reclamaciones.png" alt="Libro de Reclamaciones">
-                        </a>
+                    
+                    <div class="config-acciones" id="configAcciones">
                     </div>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <h6>📍 Lima - Perú | © 2024 El Buen Sabor - Todos los derechos reservados</h6>
-            </div>
-        </footer>
+            `;
+            
+            if (typeof iniciarConfigurador === 'function') {
+                iniciarConfigurador(producto);
+            } else {
+                console.error("Función iniciarConfigurador no encontrada");
+                const opcionesDiv = document.getElementById("configOpciones");
+                if (opcionesDiv) {
+                    opcionesDiv.innerHTML = `
+                        <p style="color: red; text-align: center; padding: 20px;">
+                            Error al cargar el configurador. Por favor, recarga la página.
+                        </p>
+                    `;
+                }
+            }
+        }
+        
+        if (typeof toggleMenu === 'undefined') {
+            window.toggleMenu = function() {
+                const menu = document.getElementById("navMenu");
+                if (menu) {
+                    menu.classList.toggle("mostrar");
+                }
+            };
+        }
+    </script>
 
-    </body>
+</body>
 </html>
