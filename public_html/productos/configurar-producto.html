@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Adamina&family=Alex+Brush&family=Arbutus+Slab&family=Berkshire+Swash&display=swap" rel="stylesheet">
     
     <style>
+        /* ===== ESTILOS PARA EL CONFIGURADOR ===== */
         .configuracion-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -123,6 +124,12 @@
             transform: scale(1.1);
         }
 
+        .config-opciones input[type="radio"]:checked + label,
+        .config-opciones input[type="checkbox"]:checked + label {
+            border-color: #FF6B35;
+            background: #FFF5F0;
+        }
+
         .cantidad-control {
             display: flex;
             align-items: center;
@@ -191,6 +198,7 @@
             transform: translateY(0);
         }
 
+        /* Loading */
         .loading-config {
             text-align: center;
             padding: 60px 20px;
@@ -212,6 +220,7 @@
             100% { transform: rotate(360deg); }
         }
 
+        /* Producto no encontrado */
         .producto-no-encontrado {
             text-align: center;
             padding: 60px 20px;
@@ -249,6 +258,7 @@
             box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
         }
 
+        /* Responsive */
         @media (max-width: 992px) {
             .configuracion-grid {
                 grid-template-columns: 1fr;
@@ -331,7 +341,7 @@
         </div>
 
         <!-- CARRITO -->
-        <a href="../carrito.html" class="nav-carrito">
+        <a href="carrito.html" class="nav-carrito">
             <i class="fa-solid fa-cart-shopping"></i>
             <span id="contadorCarrito">0</span>
         </a>
@@ -349,6 +359,7 @@
     <section class="containers" style="min-height: 60vh;">
 
         <div id="configuradorProducto">
+            <!-- Loading inicial -->
             <div class="loading-config" id="loadingConfig">
                 <i class="fas fa-utensils"></i>
                 <h3>Cargando producto...</h3>
@@ -407,24 +418,32 @@
     <script src="../js/carrito.js"></script>
 
     <script>
+        // ============================================
+        // CONFIGURADOR DE PRODUCTO - VERSIÓN MEJORADA
+        // ============================================
+        
         document.addEventListener("DOMContentLoaded", function() {
             const contenedor = document.getElementById("configuradorProducto");
             const loading = document.getElementById("loadingConfig");
             
+            // Obtener ID del producto
             const params = new URLSearchParams(window.location.search);
             const idProducto = parseInt(params.get("id"));
             
+            // Validar que el ID sea válido
             if (!idProducto || isNaN(idProducto)) {
                 mostrarError(contenedor, loading, "ID de producto inválido");
                 return;
             }
             
+            // Verificar que productos esté definido
             if (typeof productos === 'undefined' || !Array.isArray(productos)) {
                 console.error("El array 'productos' no está definido");
                 mostrarError(contenedor, loading, "Error al cargar los productos");
                 return;
             }
             
+            // Buscar producto
             const producto = productos.find(p => p.id === idProducto);
             
             if (!producto) {
@@ -432,14 +451,18 @@
                 return;
             }
             
+            // Si todo está bien, ocultar loading y mostrar producto
             if (loading) loading.style.display = "none";
             
+            // Renderizar el producto
             renderizarProducto(contenedor, producto);
             
+            // Actualizar contador del carrito
             if (typeof actualizarContadorCarrito === 'function') {
                 actualizarContadorCarrito();
             }
             
+            // Actualizar título de la página
             document.title = `${producto.nombre} - El Buen Sabor`;
             const titleElement = document.getElementById("pageTitle");
             if (titleElement) {
@@ -465,6 +488,7 @@
         }
         
         function renderizarProducto(contenedor, producto) {
+            // Validar que el producto tenga todos los datos necesarios
             const nombre = producto.nombre || "Producto sin nombre";
             const descripcion = producto.descripcion || "Sin descripción";
             const precio = producto.precio || 0;
@@ -491,13 +515,16 @@
                     </div>
 
                     <div class="config-opciones" id="configOpciones">
+                        <!-- Las opciones se renderizan aquí -->
                     </div>
                     
                     <div class="config-acciones" id="configAcciones">
+                        <!-- Los botones se renderizan aquí -->
                     </div>
                 </div>
             `;
             
+            // Iniciar el configurador
             if (typeof iniciarConfigurador === 'function') {
                 iniciarConfigurador(producto);
             } else {
@@ -513,6 +540,7 @@
             }
         }
         
+        // Función de respaldo para toggleMenu si no está definida
         if (typeof toggleMenu === 'undefined') {
             window.toggleMenu = function() {
                 const menu = document.getElementById("navMenu");

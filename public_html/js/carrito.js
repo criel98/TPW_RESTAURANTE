@@ -446,19 +446,32 @@ function actualizarPrecio() {
     let base = parseFloat(productoActual.precio) || 0;
     let extraTamano = 0;
     let extras = 0;
+    let extraPorcion = 0;  // ← NUEVO: para porciones
 
+    // ===== TAMAÑOS =====
     const tamano = document.querySelector('input[name="tamano"]:checked');
     if (tamano) {
         extraTamano = parseFloat(tamano.value) || 0;
     }
 
+    // ===== EXTRAS =====
     document.querySelectorAll(".extra:checked").forEach(el => {
         extras += parseFloat(el.value) || 0;
     });
 
-    let precioUnitario = base + extraTamano + extras;
+    // ===== PORCIONES (NUGGETS) =====
+    const porcion = document.querySelector('input[name="porcion"]:checked');
+    if (porcion) {
+        extraPorcion = parseFloat(porcion.value) || 0;
+    }
+
+    // ===== CALCULAR PRECIO UNITARIO =====
+    let precioUnitario = base + extraTamano + extras + extraPorcion;
+    
+    // ===== CALCULAR TOTAL CON CANTIDAD =====
     total = precioUnitario * cantidad;
 
+    // ===== ACTUALIZAR PRECIO EN PANTALLA =====
     const precioFinal = document.getElementById("precioFinal");
     if (precioFinal) {
         precioFinal.textContent = total.toFixed(2);
