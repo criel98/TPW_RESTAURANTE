@@ -1,0 +1,375 @@
+/* ==========================================================================
+   CONFIGURAR PRODUCTO - Hoja de estilos exclusiva de configurar-producto.html
+   Separado de styles.css para no afectar el resto del sitio.
+   ========================================================================== */
+
+/*==========================
+CARRITO - CONFIGURACION
+==========================*/
+
+.configuracion-grid{
+    display:grid;
+    grid-template-columns:420px 1fr 380px;
+    gap:40px;
+    align-items:start;
+    margin:50px auto;
+    max-width:1400px;
+}
+
+.config-img{
+    position:sticky;
+    top:120px;
+    align-self: start;
+}
+
+.config-img img{
+    width:100%;
+    border-radius:22px;
+    border:1px solid #ececec;
+    box-shadow:none;
+    transition:.30s;
+}
+
+.config-img img:hover{
+    transform:scale(1.01);
+    border-color:#d8d8d8;
+}
+
+.config-info{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    padding:10px 5px;
+    
+    position: sticky;
+    top:120px;
+    align-self:start;
+}
+
+.config-info h1{
+    font-size:2.3rem;
+    color:#222;
+    margin-bottom:15px;
+    font-weight:800;
+    letter-spacing:.5px;
+    line-height:1.2;
+}
+
+.config-info h1::after{
+    content:"";
+    display:block;
+    width:90px;
+    height:4px;
+    background:#b22222;
+    border-radius:50px;
+    margin-top:14px;
+}
+
+.config-info p{
+    font-size:1rem;
+    color:#666;
+    line-height:1.8;
+    margin:18px 0 30px;
+    text-align:left;
+}
+
+.config-info h2{
+    font-size:2.4rem;
+    color:#b22222;
+    margin:0;
+    font-weight:800;
+}
+
+.config-info h2::before{
+    content:"Precio";
+    display:block;
+    font-size:.90rem;
+    font-weight:600;
+    color:#888;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:5px;
+}
+
+
+
+/*==========================
+OPCIONES
+==========================*/
+
+.config-opciones{
+
+    background:#fff;
+
+    padding:28px;
+
+    border-radius:22px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.config-opciones h3{
+
+    color:#8B0000;
+
+    font-size:1rem;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    margin-top:18px;
+
+    margin-bottom:10px;
+
+}
+
+.config-opciones hr{
+
+    border:none;
+
+    border-top:1px solid #ececec;
+
+    margin:18px 0;
+
+}
+
+.config-opciones label{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding:14px 16px;
+
+    border:1px solid #ececec;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    font-size:.95rem;
+
+    color:#444;
+
+    font-weight:500;
+
+    background:white;
+
+}
+
+.config-opciones label:hover{
+
+    background:#fff7f7;
+
+    border-color:#b22222;
+
+    transform:translateX(4px);
+
+}
+
+.config-opciones input{
+
+    transform:scale(1.15);
+
+    accent-color:#b22222;
+
+}
+
+
+
+/*==========================
+CANTIDAD
+==========================*/
+
+.cantidad-control{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-top:10px;
+
+}
+
+.btn-menos,
+.btn-mas{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    font-size:20px;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.btn-menos{
+
+    background:#d9534f;
+
+}
+
+.btn-menos:hover{
+
+    background:#b52b27;
+
+    transform:scale(1.08);
+
+}
+
+.btn-mas{
+
+    background:#28a745;
+
+}
+
+.btn-mas:hover{
+
+    background:#218838;
+
+    transform:scale(1.08);
+
+}
+
+.cantidad-numero{
+
+    font-size:1.3rem;
+
+    font-weight:700;
+
+    min-width:40px;
+
+    text-align:center;
+
+}
+
+
+
+/*==========================
+BOTON
+==========================*/
+
+.config-acciones{
+
+    grid-column:3;
+
+    margin-top:25px;
+
+}
+
+.config-acciones .btn-agregar-carrito{
+
+    width:100%;
+
+    padding:18px;
+
+    border-radius:14px;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    box-shadow:0 8px 20px rgba(40,167,69,.25);
+
+}
+
+.config-acciones .btn-agregar-carrito:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+
+/*==========================
+RESPONSIVE
+==========================*/
+
+@media(max-width:1200px){
+
+.configuracion-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.config-img{
+
+position:static;
+
+}
+
+.config-info{
+
+position:static;
+
+top:auto;
+
+}
+
+.config-acciones{
+
+grid-column:auto;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.config-opciones{
+
+padding:22px;
+
+}
+
+.config-info h1{
+
+font-size:1.9rem;
+
+}
+
+.config-info h2{
+
+font-size:2rem;
+
+}
+
+.config-img,
+.config-info{
+    position: static;
+    top: auto;
+}
+
+}

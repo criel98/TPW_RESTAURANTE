@@ -1,0 +1,45 @@
+.btn-fin-compra {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.1s ease;
+    width: 90%;
+    margin: 5px auto;
+}
+
+.btn-fin-compra:hover {
+    background: #1e7e34;
+}
+
+.btn-fin-compra:active {
+    transform: scale(0.97);
+}
+
+.btn-seguir-comprando {
+    background: rgb(179, 0, 0);
+    display: flex;
+    color: white;
+    border:none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 90%;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.1s ease;
+    margin: 5px auto;
+}
+
+.btn-seguir-comprando:hover {
+    background: rgb(140, 0, 0);
+}
+
+.btn-seguir-comprando:active {
+    transform: scale(0.98);
+}
