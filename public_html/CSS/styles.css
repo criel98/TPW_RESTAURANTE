@@ -2063,7 +2063,6 @@ CARRITO
 .nav-carrito{
     display: flex;
     align-items: center;
-    gap: 8px;
 
     text-decoration: none;
     color: white;
@@ -2079,21 +2078,36 @@ CARRITO
     background: rgba(255,255,255,0.15);
 }
 
+.carrito-icono-wrapper{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #contadorCarrito{
-    width: 22px;
-    height: 22px;
+    position: absolute;
+    top: -6px;
+    right: -8px;
+
+    width: 16px;
+    height: 16px;
+    box-sizing: border-box;
 
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    line-height: 16px;
 
     border-radius: 50%;
 
     background: #FFD700;
     color: black;
 
-    font-size: 0.8rem;
+    font-size: 0.65rem;
     font-weight: bold;
+    line-height: 1;
 }
 
 
