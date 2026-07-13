@@ -296,7 +296,7 @@ const productos = [
         id: 12,
         nombre: "Promo Duo Buen sabor",
         categoria: "promocion",
-        precio: 52.00,
+        precio: 48.00,
         descripcion: "2 hamburguesas medianas [Doble con queso + Tejana] Ahorra y disfruta un plan completo para compartir.",
         imagen: "imagenes/promos/promo2.jpeg",
         badge: "Oferta",
