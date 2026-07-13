@@ -120,7 +120,7 @@ const productos = [
         precio: 28.00,
         descripcion: "Doble hamburguesa 100% carne de res a la parrilla acompañada de queso fundido y crujientes láminas de tocino. Una combinación intensa y jugosa diseñada para quienes buscan un sabor más contundente y una experiencia gastronómica más completa.",
         imagen: "imagenes/Productos/carne y tocino.jpeg",
-        badge: "🔥 Especial",
+        badge: "<i class=\"fa-solid fa-fire\"></i> Especial",
         destacado: true,
         ingredientes: ["Doble carne de res", "Queso americano", "Tocino crujiente"],
         alergenos: ["Gluten", "Leche y derivados", "Soya y derivados", "Sésamo"],
@@ -249,6 +249,121 @@ const productos = [
             ],
             salsas: ["Mostaza", "Ketchup"]
         }
+    },
+    {
+        id: 11,
+        nombre: "Combo Clasico",
+        categoria: "promocion",
+        precio: 38.00,
+        descripcion: "hamburguesa clásica con papas a precio especial y una gaseosa ideal para matar el hambre del almuerzo.",
+        imagen: "imagenes/promos/promo1.jpeg",
+        badge: "Promo",
+        destacado: true,
+        ingredientes: ["Carne de res", "Lechuga", "Tomate", "Cebolla", "Kétchup", "Mayonesa"],
+        alergenos: ["Gluten", "Huevo y derivados", "Sésamo"],
+        nutricion: {
+            peso: "220 g",
+            calorias: 550,
+            grasas: "30 g",
+            carbohidratos: "38 g",
+            proteinas: "28 g",
+            sodio: "850 mg",
+            azucares: "8 g",
+            grasasTrans: "0.5 g",
+            grasasSaturadas: "11 g",
+            fibra: "3 g",
+            idr: {
+                calorias: "28%",
+                grasas: "43%",
+                carbohidratos: "13%",
+                proteinas: "56%",
+                sodio: "35%",
+                azucares: "9%",
+                grasasSaturadas: "55%",
+                fibra: "12%"
+            }
+        },
+        configuracion: {
+            tamanos: [
+                {nombre: "Combo", extra: 0}
+            ],
+            extras: [
+                {nombre: "Queso extra", extra: 2}
+            ]
+        }
+    },
+    {
+        id: 12,
+        nombre: "Promo Duo Buen sabor",
+        categoria: "promocion",
+        precio: 55.00,
+        descripcion: "2 hamburguesas medianas [Doble con queso + Tejana] Ahorra y disfruta un plan completo para compartir.",
+        imagen: "imagenes/promos/promo2.jpeg",
+        badge: "Oferta",
+        destacado: true,
+        ingredientes: ["Doble carne de res", "Queso cheddar", "Pepinillos", "Mostaza", "Kétchup"],
+        alergenos: ["Gluten", "Leche y derivados", "Mostaza", "Sésamo"],
+        nutricion: {
+            peso: "340 g",
+            calorias: 810,
+            grasas: "50 g",
+            carbohidratos: "42 g",
+            proteinas: "48 g",
+            sodio: "1150 mg",
+            azucares: "8 g",
+            grasasTrans: "0.9 g",
+            grasasSaturadas: "20 g",
+            fibra: "3 g",
+            idr: {
+                calorias: "41%",
+                grasas: "71%",
+                carbohidratos: "14%",
+                proteinas: "96%",
+                sodio: "48%",
+                azucares: "9%",
+                grasasSaturadas: "100%",
+                fibra: "12%"
+            }
+        },
+        configuracion: {
+            extras: [
+                {nombre: "Papas adicionales", extra: 5}
+            ]
+        }
+    },
+    {
+        id: 13,
+        nombre: "Promo Familiar",
+        categoria: "promocion",
+        precio: 32.00,
+        descripcion: "Hamburguesa doble carne con tocino + una hamburguesa grande. Incluye bebida 1L + Papa Fmiliar.",
+        imagen: "imagenes/promos/promo3.jpeg",
+        badge: "Destacado",
+        destacado: true,
+        ingredientes: ["Doble carne de res", "Queso cheddar", "Pepinillos", "Mostaza", "Kétchup"],
+        alergenos: ["Gluten", "Leche y derivados", "Mostaza", "Sésamo"],
+        nutricion: {
+            peso: "340 g",
+            calorias: 810,
+            grasas: "50 g",
+            carbohidratos: "42 g",
+            proteinas: "48 g",
+            sodio: "1150 mg",
+            azucares: "8 g",
+            grasasTrans: "0.9 g",
+            grasasSaturadas: "20 g",
+            fibra: "3 g",
+            idr: {
+                calorias: "41%",
+                grasas: "71%",
+                carbohidratos: "14%",
+                proteinas: "96%",
+                sodio: "48%",
+                azucares: "9%",
+                grasasSaturadas: "100%",
+                fibra: "12%"
+            }
+        },
     },
 
     // ===== COMPLEMENTOS =====
@@ -510,7 +625,7 @@ function crearTarjetaProducto(producto) {
     <button
         class="btn-agregar-carrito"
         data-id="${producto.id}">
-        🛒 Agregar
+        <i class="fa-solid fa-cart-shopping"></i> Agregar
     </button>
 
 </div>
@@ -532,18 +647,25 @@ function crearTarjetaProducto(producto) {
  * Genera todo el catálogo de productos dinámicamente
  */
 function generarCatalogo() {
+    const contenedorPromociones = document.getElementById('promociones-list-container');
     const contenedorHamburguesas = document.getElementById('hamburguesas-container');
     const contenedorComplementos = document.getElementById('complementos-container');
 
-    if (!contenedorHamburguesas || !contenedorComplementos) {
+    if (!contenedorHamburguesas || !contenedorComplementos || !contenedorPromociones) {
         return;
     }
 
+    contenedorPromociones.innerHTML = '';
     contenedorHamburguesas.innerHTML = '';
     contenedorComplementos.innerHTML = '';
 
+    const promociones = productos.filter(p => p.categoria === 'promocion');
     const hamburguesas = productos.filter(p => p.categoria === 'hamburguesa');
     const complementos = productos.filter(p => p.categoria === 'complemento');
+
+    promociones.forEach(producto => {
+        contenedorPromociones.appendChild(crearTarjetaProducto(producto));
+    });
 
     hamburguesas.forEach(producto => {
         contenedorHamburguesas.appendChild(crearTarjetaProducto(producto));
@@ -627,38 +749,82 @@ function inicializarCarruselesProductos() {
     });
 }
 
-function buscarProductos(textoBusqueda) {
+function crearItemDropdown(producto) {
+    const item = document.createElement('button');
+    item.type = 'button';
+    item.className = 'search-dropdown-item';
+    item.innerHTML = `
+        <img src="${producto.imagen}" alt="${producto.nombre}">
+        <div class="search-dropdown-item-content">
+            <p class="search-dropdown-item-title">${producto.nombre}</p>
+            <p class="search-dropdown-item-subtitle">${producto.descripcion}</p>
+            <p class="search-dropdown-item-meta">S/ ${producto.precio.toFixed(2)}</p>
+        </div>
+    `;
+    item.addEventListener('click', () => {
+        window.location.href = `productos/detalle.html?id=${producto.id}`;
+    });
+    return item;
+}
 
-    const hamburguesasContainer =
-            document.getElementById("hamburguesas-container");
-
-    const complementosContainer =
-            document.getElementById("complementos-container");
-
-    if (!hamburguesasContainer || !complementosContainer)
+function actualizarDropdownBusqueda(resultados) {
+    const dropdown = document.getElementById('searchDropdown');
+    if (!dropdown)
         return;
 
+    dropdown.innerHTML = '';
+    if (!resultados.length) {
+        dropdown.innerHTML = '<div class="no-search-results">No se encontraron resultados.</div>';
+        dropdown.classList.add('active');
+        return;
+    }
+
+    resultados.slice(0, 5).forEach(producto => {
+        dropdown.appendChild(crearItemDropdown(producto));
+    });
+    dropdown.classList.add('active');
+}
+
+function cerrarDropdownBusqueda() {
+    const dropdown = document.getElementById('searchDropdown');
+    if (!dropdown)
+        return;
+    dropdown.classList.remove('active');
+}
+
+function buscarProductos(textoBusqueda) {
+    const promocionesContainer = document.getElementById("promociones-list-container");
+    const hamburguesasContainer = document.getElementById("hamburguesas-container");
+    const complementosContainer = document.getElementById("complementos-container");
+
+    if (!promocionesContainer || !hamburguesasContainer || !complementosContainer)
+        return;
+
+    promocionesContainer.innerHTML = "";
     hamburguesasContainer.innerHTML = "";
     complementosContainer.innerHTML = "";
 
-    const resultados = productos.filter(producto =>
-        producto.nombre.toLowerCase().includes(textoBusqueda.toLowerCase()) ||
-                producto.descripcion.toLowerCase().includes(textoBusqueda.toLowerCase())
-    );
+    const termino = textoBusqueda.trim().toLowerCase();
+    const resultados = productos.filter(producto => {
+        const nombre = producto.nombre.toLowerCase();
+        const descripcion = producto.descripcion.toLowerCase();
+        const ingredientes = producto.ingredientes ? producto.ingredientes.join(' ').toLowerCase() : '';
+        return nombre.includes(termino) || descripcion.includes(termino) || ingredientes.includes(termino);
+    });
 
     resultados.forEach(producto => {
-
-        if (producto.categoria === "hamburguesa") {
-            hamburguesasContainer.appendChild(
-                    crearTarjetaProducto(producto)
-                    );
+        if (producto.categoria === "promocion") {
+            promocionesContainer.appendChild(crearTarjetaProducto(producto));
+        } else if (producto.categoria === "hamburguesa") {
+            hamburguesasContainer.appendChild(crearTarjetaProducto(producto));
         } else {
-            complementosContainer.appendChild(
-                    crearTarjetaProducto(producto)
-                    );
+            complementosContainer.appendChild(crearTarjetaProducto(producto));
         }
-
     });
+
+    if (!promocionesContainer.children.length) {
+        promocionesContainer.innerHTML = '<p class="carrusel-vacio">No hay promociones con ese nombre.</p>';
+    }
 
     if (!hamburguesasContainer.children.length) {
         hamburguesasContainer.innerHTML = '<p class="carrusel-vacio">No hay hamburguesas con ese nombre.</p>';
@@ -666,6 +832,12 @@ function buscarProductos(textoBusqueda) {
 
     if (!complementosContainer.children.length) {
         complementosContainer.innerHTML = '<p class="carrusel-vacio">No hay complementos con ese nombre.</p>';
+    }
+
+    if (termino.length) {
+        actualizarDropdownBusqueda(resultados);
+    } else {
+        cerrarDropdownBusqueda();
     }
 }
 
@@ -735,9 +907,29 @@ document.addEventListener('DOMContentLoaded', function () {
     inicializarCarruselesProductos();
 
     const buscador = document.getElementById("buscadorProductos");
+    const searchDropdown = document.getElementById('searchDropdown');
     if (buscador) {
         buscador.addEventListener("input", function () {
             buscarProductos(this.value);
+        });
+        buscador.addEventListener('focus', function () {
+            if (this.value.trim().length) {
+                buscarProductos(this.value);
+            }
+        });
+    }
+
+    document.addEventListener('click', function (event) {
+        if (!buscador || !searchDropdown)
+            return;
+        if (!searchDropdown.contains(event.target) && event.target !== buscador) {
+            cerrarDropdownBusqueda();
+        }
+    });
+
+    if (searchDropdown) {
+        searchDropdown.addEventListener('click', function (event) {
+            event.stopPropagation();
         });
     }
 
@@ -760,9 +952,9 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     const mensajes = {
-        chico: {saludo: "¡Bienvenido", badge: "🔥 Super Delicioso 🔥", title: "El Buen Sabor", subtitle: "¡Lo mejor para ti!"},
-        chica: {saludo: "¡Bienvenida", badge: "💖 Super Delicioso 💖", title: "El Buen Sabor", subtitle: "¡Hecha para ti!"},
-        otro: {saludo: "¡Bienvenid@", badge: "✨ Super Delicioso ✨", title: "El Buen Sabor", subtitle: "¡Para todos los gustos!"}
+        chico: {saludo: "¡Bienvenido", badge: "<i class=\"fa-solid fa-fire\"></i> Super Delicioso <i class=\"fa-solid fa-fire\"></i>", title: "El Buen Sabor", subtitle: "¡Lo mejor para ti!"},
+        chica: {saludo: "¡Bienvenida", badge: "<i class=\"fa-solid fa-heart\"></i> Super Delicioso <i class=\"fa-solid fa-heart\"></i>", title: "El Buen Sabor", subtitle: "¡Hecha para ti!"},
+        otro: {saludo: "¡Bienvenid@", badge: "<i class=\"fa-solid fa-sparkles\"></i> Super Delicioso <i class=\"fa-solid fa-sparkles\"></i>", title: "El Buen Sabor", subtitle: "¡Para todos los gustos!"}
     };
 
     let usuarioActual = null;
@@ -795,7 +987,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (elementos.heroTitle)
             elementos.heroTitle.innerHTML = m.title;
         if (elementos.heroSubtitle)
-            elementos.heroSubtitle.innerHTML = `${m.saludo} ${usuarioActual.nombre}! 🔥 ${m.subtitle}`;
+            elementos.heroSubtitle.innerHTML = `${m.saludo} ${usuarioActual.nombre}! <i class="fa-solid fa-fire"></i> ${m.subtitle}`;
     };
 
     const actualizarBotonLogin = () => {
@@ -856,18 +1048,18 @@ document.addEventListener('DOMContentLoaded', function () {
             const genero = elementos.generoSelect?.value || '';
 
             if (!nombre)
-                return mostrarNotificacion('❌ Por favor, ingresa tu nombre', 'error');
+                return mostrarNotificacion('<i class="fa-solid fa-circle-xmark"></i> Por favor, ingresa tu nombre', 'error');
             if (!genero)
-                return mostrarNotificacion('❌ Por favor, selecciona tu género', 'error');
+                return mostrarNotificacion('<i class="fa-solid fa-circle-xmark"></i> Por favor, selecciona tu género', 'error');
 
             guardarSesion(nombre, genero);
             cerrarModal();
             personalizarPagina();
             actualizarBotonLogin();
 
-            const emoji = genero === 'chico' ? '👨' : (genero === 'chica' ? '👩' : '🌟');
+            const emoji = genero === 'chico' ? '<i class="fa-solid fa-mars"></i>' : (genero === 'chica' ? '<i class="fa-solid fa-venus"></i>' : '<i class="fa-solid fa-star"></i>');
             const textoGenero = genero === 'chico' ? 'o' : (genero === 'chica' ? 'a' : 'e');
-            mostrarNotificacion(`${emoji} ¡Bienvenid${textoGenero} ${nombre}! Ya eres parte de El Buen Sabor 🍔`, 'bienvenida');
+            mostrarNotificacion(`${emoji} ¡Bienvenid${textoGenero} ${nombre}! Ya eres parte de El Buen Sabor <i class="fa-solid fa-burger"></i>`, 'bienvenida');
 
             if (elementos.nombreInput)
                 elementos.nombreInput.value = '';

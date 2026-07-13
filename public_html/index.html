@@ -10,9 +10,7 @@
         <link rel="icon" type="image/png" href="imagenes/Logo/favicon-logo.png">
         <link href="CSS/styles.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-        <link
-            href="https://fonts.googleapis.com/css2?family=Adamina&family=Alex+Brush&family=Arbutus+Slab&family=Berkshire+Swash&display=swap"
-            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     </head>
 
     <body class="PaginaRest">
@@ -63,7 +61,13 @@
                     <div class="hero-badge" id="heroBadge">El Buen Sabor</div>
                     <h1 class="hero-title" id="heroTitle">Hamburguesas Artesanales</h1>
                     <p class="hero-subtitle" id="heroSubtitle">La mejor oferta del día</p>
-                    <a href="#" class="hero-btn" id="btnViewProducts">Ver todos los productos</a>
+                    <a href="#" class="hero-btn" id="btnViewProducts">
+                        <i class="fa-solid fa-burger"></i> Ver todos los productos
+                    </a>
+                    <div class="hero-trust">
+                        <span><i class="fa-solid fa-fire"></i> 100% carne a la parrilla</span>
+                        <span><i class="fa-solid fa-motorcycle"></i> Delivery en 30 min</span>
+                    </div>
                 </div>
             </div>
         </header>
@@ -99,13 +103,11 @@
             </div>
         </section>
 
-
-
         <!-- ========================================
              SECCIÓN PRODUCTOS
         ======================================== -->
         <div id="Productos">
-
+            
 
             <!-- Promociones: cambia estos textos cuando quieras actualizar las ofertas -->
             <div class="containers">
@@ -116,20 +118,20 @@
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
                 <section class="productos-slider promociones-slider" id="promociones-container" aria-live="polite">
-                    <article class="promo-card">
-                        <span>Promo 1</span>
-                        <h3>Combo Clasico</h3>
-                        <p>Hamburguesa Clasica + Papa Personal + gaseosa 1L por S/ 30.00.</p>
+                    <article class="promo-card" style="--bg-img:url('imagenes/promos/promo1.jpeg')">
+                        <a href="#promociones-list-container" class="promo-link">
+                            <img src="imagenes/promos/promo1.jpeg" alt="El Buen Sabor">
+                        </a>
                     </article>
-                    <article class="promo-card">
-                        <span>Promo 2</span>
-                        <h3>Duo Buen Sabor</h3>
-                        <p>2 hamburguesas: Doble con queso + Hamburguesa Tejana por S/ 48.00.</p>
+                    <article class="promo-card" style="--bg-img:url('imagenes/promos/promo2.jpeg')">
+                        <a href="#promociones-list-container" class="promo-link">
+                            <img src="imagenes/promos/promo2.jpeg" alt="El Buen Sabor">
+                        </a>
                     </article>
-                    <article class="promo-card">
-                        <span>Promo 3</span>
-                        <h3>Combo Familiar</h3>
-                        <p>Hamburguesa Grande + Doble carne con Tocino + Papa Familiar + Coca Cola 1L por S/ 72.00.</p>
+                    <article class="promo-card" style="--bg-img:url('imagenes/promos/promo3.jpeg')">
+                        <a href="#promociones-list-container" class="promo-link">
+                            <img src="imagenes/promos/promo3.jpeg" alt="El Buen Sabor">
+                        </a>
                     </article>
                 </section>
                 <button class="btn-carrusel btn-next" type="button" aria-label="Ver promociones siguientes">
@@ -143,13 +145,33 @@
                     <input
                         type="text"
                         id="buscadorProductos"
-                        placeholder="🔍 Buscar hamburguesas, papas, bebidas..."
-                        >
+                        placeholder="Buscar hamburguesas, papas, bebidas..."
+                        autocomplete="off"
+                    >
+                    <div id="searchDropdown" class="search-dropdown" aria-live="polite"></div>
                 </div>
             </div>
+
+            <!-- Promociones -->
+            <div class="containers">
+                <h2 class="subtitulo"><i class="fa-solid fa-tag"></i> Promociones</h2>
+            </div>
+            <div class="carrusel-productos" data-carousel="promociones-list-container">
+                <button class="btn-carrusel btn-prev" type="button" aria-label="Ver promociones anteriores">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <section class="productos-slider" id="promociones-list-container" aria-live="polite">
+                    <!-- Las tarjetas se generan con JavaScript -->
+                </section>
+                <button class="btn-carrusel btn-next" type="button" aria-label="Ver promociones siguientes">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+
+
             <!-- Hamburguesas -->
             <div class="containers">
-                <h2 class="subtitulo">🍔 Hamburguesas</h2>
+                <h2 class="subtitulo"><i class="fa-solid fa-burger"></i> Hamburguesas</h2>
             </div>
             <div class="carrusel-productos" data-carousel="hamburguesas-container">
                 <button class="btn-carrusel btn-prev" type="button" aria-label="Ver productos anteriores">
@@ -165,7 +187,7 @@
 
             <!-- Complementos -->
             <div class="containers">
-                <h2 class="subtitulo">🍟 Complementos</h2>
+                <h2 class="subtitulo"><i class="fa-solid fa-fries"></i> Complementos</h2>
             </div>
             <div class="carrusel-productos" data-carousel="complementos-container">
                 <button class="btn-carrusel btn-prev" type="button" aria-label="Ver complementos anteriores">
@@ -228,16 +250,16 @@
                             <i class="fa-solid fa-venus-mars"></i>
                             <select id="generoUsuario">
                                 <option value="">Selecciona tu género</option>
-                                <option value="chico">👨 Chico</option>
-                                <option value="chica">👩 Chica</option>
-                                <option value="otro">🌟 Prefiero no decirlo</option>
+                                <option value="chico"><i class="fa-solid fa-mars"></i> Chico</option>
+                                <option value="chica"><i class="fa-solid fa-venus"></i> Chica</option>
+                                <option value="otro"><i class="fa-solid fa-star"></i> Prefiero no decirlo</option>
                             </select>
                         </div>
                         <button type="submit" class="btn-submit">
                             <i class="fa-solid fa-face-smile"></i> Entrar
                         </button>
                     </form>
-                    <p class="modal-nota">✨ Solo dinos tu nombre y cómo te identificas ✨</p>
+                    <p class="modal-nota"><i class="fa-solid fa-sparkles"></i> Solo dinos tu nombre y cómo te identificas <i class="fa-solid fa-sparkles"></i></p>
                 </div>
             </div>
         </div>
@@ -284,7 +306,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <h6>📍 Lima - Perú | © 2024 El Buen Sabor - Todos los derechos reservados</h6>
+                <h6><i class="fa-solid fa-location-dot"></i> Lima - Perú | © 2024 El Buen Sabor - Todos los derechos reservados</h6>
             </div>
         </footer>
 
