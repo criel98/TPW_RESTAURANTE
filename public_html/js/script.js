@@ -254,7 +254,7 @@ const productos = [
         id: 11,
         nombre: "Combo Clasico",
         categoria: "promocion",
-        precio: 38.00,
+        precio: 30.00,
         descripcion: "hamburguesa clásica con papas a precio especial y una gaseosa ideal para matar el hambre del almuerzo.",
         imagen: "imagenes/promos/promo1.jpeg",
         badge: "Promo",
@@ -296,7 +296,7 @@ const productos = [
         id: 12,
         nombre: "Promo Duo Buen sabor",
         categoria: "promocion",
-        precio: 55.00,
+        precio: 52.00,
         descripcion: "2 hamburguesas medianas [Doble con queso + Tejana] Ahorra y disfruta un plan completo para compartir.",
         imagen: "imagenes/promos/promo2.jpeg",
         badge: "Oferta",
@@ -335,7 +335,7 @@ const productos = [
         id: 13,
         nombre: "Promo Familiar",
         categoria: "promocion",
-        precio: 32.00,
+        precio: 72.00,
         descripcion: "Hamburguesa doble carne con tocino + una hamburguesa grande. Incluye bebida 1L + Papa Fmiliar.",
         imagen: "imagenes/promos/promo3.jpeg",
         badge: "Destacado",
@@ -746,6 +746,56 @@ function inicializarCarruselesProductos() {
 
         crearIndicadores();
         actualizarIndicadores();
+
+        // ===== Autoplay (solo para el banner de promociones) =====
+        if (carrusel.classList.contains('carrusel-promociones')) {
+            let autoplayInterval = null;
+
+            const obtenerTarjetas = () => Array.from(slider.querySelectorAll('.promo-card'));
+
+            const obtenerIndiceActual = () => {
+                const tarjetas = obtenerTarjetas();
+                let activo = 0;
+                tarjetas.forEach((tarjeta, index) => {
+                    const distanciaActual = Math.abs(tarjeta.offsetLeft - slider.scrollLeft);
+                    const distanciaActiva = Math.abs(tarjetas[activo].offsetLeft - slider.scrollLeft);
+                    if (distanciaActual < distanciaActiva)
+                        activo = index;
+                });
+                return activo;
+            };
+
+            const irATarjeta = indice => {
+                const tarjetas = obtenerTarjetas();
+                if (!tarjetas.length)
+                    return;
+                const destino = ((indice % tarjetas.length) + tarjetas.length) % tarjetas.length;
+                slider.scrollTo({
+                    left: tarjetas[destino].offsetLeft,
+                    behavior: 'smooth'
+                });
+            };
+
+            const detenerAutoplay = () => {
+                if (autoplayInterval)
+                    clearInterval(autoplayInterval);
+                autoplayInterval = null;
+            };
+
+            const iniciarAutoplay = () => {
+                detenerAutoplay();
+                autoplayInterval = setInterval(() => {
+                    irATarjeta(obtenerIndiceActual() + 1);
+                }, 5000);
+            };
+
+            btnNext.addEventListener('click', iniciarAutoplay);
+            btnPrev.addEventListener('click', iniciarAutoplay);
+            carrusel.addEventListener('mouseenter', detenerAutoplay);
+            carrusel.addEventListener('mouseleave', iniciarAutoplay);
+
+            iniciarAutoplay();
+        }
     });
 }
 
